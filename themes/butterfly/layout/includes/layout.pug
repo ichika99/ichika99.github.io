@@ -46,3 +46,10 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
     include ./rightside.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
+
+#sakana-widget(style='position:fixed;bottom:10px;right:10px;')
+script.
+  function initSakanaWidget() {
+  new SakanaWidget().mount('#sakana-widget');
+  }
+script(async='' onload='initSakanaWidget()' src='https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js')
