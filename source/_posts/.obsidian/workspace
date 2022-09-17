@@ -1,51 +1,47 @@
 {
   "main": {
-    "id": "4345785608d159fa",
+    "id": "1ac01949d3674347",
     "type": "split",
     "children": [
       {
-        "id": "e340cf0de3b29934",
+        "id": "a29a46dc0b27efec",
         "type": "leaf",
-        "pinned": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "img/Page/IndexImg.jpg.md",
+            "file": "selfUse_Markdown.md",
             "mode": "source",
             "source": false
-          },
-          "pinned": true
+          }
         },
-        "group": "5f62b69b3dc1e019"
+        "group": "2f483ecbde83fc9c"
       },
       {
-        "id": "69dd4aa9684478cd",
+        "id": "b363f892a090c16e",
         "type": "leaf",
-        "pinned": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "img/Page/IndexImg.jpg.md",
-            "mode": "source",
+            "file": "selfUse_Markdown.md",
+            "mode": "preview",
             "source": false
-          },
-          "pinned": true
+          }
         },
-        "group": "5f62b69b3dc1e019"
+        "group": "2f483ecbde83fc9c"
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "2ca2721fc20f2a50",
+    "id": "0cc9f0d6e7449ca2",
     "type": "split",
     "children": [
       {
-        "id": "cc0cefdc7f5ffb4d",
+        "id": "fe97a1df816ef973",
         "type": "tabs",
         "children": [
           {
-            "id": "f80d84df94fcf348",
+            "id": "b23b0f583846a781",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -53,7 +49,7 @@
             }
           },
           {
-            "id": "183d73f60b02178d",
+            "id": "f41405f4e9a3f109",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -68,7 +64,7 @@
             }
           },
           {
-            "id": "1bd72b1d8c70f30a",
+            "id": "c6d3e4ac74e1435c",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -82,20 +78,20 @@
     "width": 300
   },
   "right": {
-    "id": "9bbd1cfcadab9e41",
+    "id": "d17ad167957a24c4",
     "type": "split",
     "children": [
       {
-        "id": "67b363e3757efeac",
+        "id": "eb593d8ccfdb046b",
         "type": "tabs",
         "children": [
           {
-            "id": "c7b9b46c76356ebd",
+            "id": "4c761f3b6b9cc861",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "img/Page/IndexImg.jpg.md",
+                "file": "selfUse_Markdown.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,19 +103,19 @@
             }
           },
           {
-            "id": "f71babbef0b1255f",
+            "id": "cd4900c259e785b1",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "img/Page/IndexImg.jpg.md",
+                "file": "selfUse_Markdown.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "d2430998f2d25099",
+            "id": "da7831a6c319aec6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -130,12 +126,12 @@
             }
           },
           {
-            "id": "94535e61581f044c",
+            "id": "4c5a5d47ac602ea6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "img/Page/IndexImg.jpg.md"
+                "file": "selfUse_Markdown.md"
               }
             }
           }
@@ -146,11 +142,6 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f80d84df94fcf348",
-  "lastOpenFiles": [
-    "selfUse_Markdown.md",
-    "source/img/Page/IndexImg.md",
-    "[.md",
-    "source.md"
-  ]
+  "active": "a29a46dc0b27efec",
+  "lastOpenFiles": []
 }
