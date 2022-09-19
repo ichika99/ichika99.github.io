@@ -1,7 +1,7 @@
 bottom:
     - class_name: 
       id_name: 
-      name: 相关链接(自用)
-      icon: fas fa-heartbeat
+      name: 访客地图
+      icon: fas fa-earth-americas
       order:
-      html: '<a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://vercel-server-plsghl6tc-ichika99.vercel.app/ui">评论后台管理</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://console.leancloud.app/apps/e7fx1Gc6uU9B2osvMMSSVhqr-MdYXbMMI/">LeanCloud</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://vercel.com/ichika99/vercel-server/7ZufE7xcV1pGDHLgKn7rZi9M1jPN">vercel</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://waline.js.org/guide/get-started.html#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF">Waline</a>'
+      html: '<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=sXHOfk7s0CnQ54ZNum0tRkPSqhqQkxHlIKSaRENuAOE"></script>'

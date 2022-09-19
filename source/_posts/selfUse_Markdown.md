@@ -5,8 +5,7 @@ updated: 2022-9-15 16:05:00
 tags: 自用
 categories: 自用
 description: MD及专有语法备忘。
-cover: /img/Article/MarkdownCover.jpg
-top_img: /img/Page/IndexImg.jpg
+cover: /img/Article/selfUse_Markdown/cover.jpg
 ---
 # Markdown语法
 

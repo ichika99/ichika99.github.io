@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "selfUse_Markdown.md",
+            "file": "other_UpdateLog.md",
             "mode": "source",
             "source": false
           }
@@ -22,7 +22,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "selfUse_Markdown.md",
+            "file": "other_UpdateLog.md",
             "mode": "preview",
             "source": false
           }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "selfUse_Markdown.md",
+                "file": "other_UpdateLog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "selfUse_Markdown.md",
+                "file": "other_UpdateLog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "selfUse_Markdown.md"
+                "file": "other_UpdateLog.md"
               }
             }
           }
@@ -143,5 +143,9 @@
     "collapsed": true
   },
   "active": "a29a46dc0b27efec",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "other_FirstArticle.md",
+    "other_UpdateLog.md",
+    "selfUse_Markdown.md"
+  ]
 }

@@ -1,0 +1,43 @@
+- class_name: 支持
+  class_desc: 
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-cn/
+      avatar: /img/Article/Link/hexo.svg
+      descr: 框架支持
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: /img/Article/Link/butterfly.png
+      descr: 主题提供
+    - name: Github
+      link: https://github.com/ichika99/ichika99.github.io/
+      avatar: /img/Article/Link/github.png
+      descr: 项目托管
+    - name: 阿里云
+      link: https://cn.aliyun.com/
+      avatar: /img/Article/Link/aliCloud.jpg
+      descr: 域名提供
+    - name: 腾讯云
+      link: https://cloud.tencent.com/
+      avatar: /img/Article/Link/tecentCloud.png
+      descr: 评论系统支持
+    - name: Twikoo
+      link: https://twikoo.js.org/
+      avatar: /img/Article/Link/twikoo.png
+      descr: 评论系统支持
+    - name: Vercel
+      link: https://vercel.com/
+      avatar: /img/Article/Link/Vercel.png
+      descr: 技术支持
+
+- class_name: 友情链接（长期招租）
+  class_desc: 
+  link_list:
+    - name: Akilarの糖果屋
+      link: https://akilar.top/
+      avatar: /img/Article/Link/akilar.jpg
+      descr: butterfly美化
+    - name: Zero617のblog
+      link: https://zero617.top/
+      avatar: /img/Article/Link/zero617.jpg
+      descr: butterfly美化
