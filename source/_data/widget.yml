@@ -1,7 +1,20 @@
 bottom:
     - class_name: 
       id_name: 
+      name: 访客地图
+      icon: fas fa-heartbeat
+      order:
+      html: '<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=sXHOfk7s0CnQ54ZNum0tRkPSqhqQkxHlIKSaRENuAOE"></script>'
+
+    - class_name: 
+      id_name: 
       name: 相关链接(自用)
       icon: fas fa-heartbeat
       order:
-      html: '<a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://vercel-server-plsghl6tc-ichika99.vercel.app/ui">评论后台管理</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://console.leancloud.app/apps/e7fx1Gc6uU9B2osvMMSSVhqr-MdYXbMMI/">LeanCloud</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://vercel.com/ichika99/vercel-server/7ZufE7xcV1pGDHLgKn7rZi9M1jPN">vercel</a><a style="display:block;background-color:#49b1f5;color:white;text-align:center;line-height:2.4;margin:5px 0;" href="https://waline.js.org/guide/get-started.html#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF">Waline</a>'
+      html: '<style>
+.button-style{display:block;text-align:center;line-height:2.4;margin:5px 0;background-color:#60B7FF;color:white}
+.button-style:hover{background-color:#F36EFF;transition:.3s;color:white}</style>
+<div>
+<a class="button-style" href="https://github.com/ichika99/ichika99.github.io" target="_blank">Github</a>
+<a class="button-style" href="https://console.cloud.tencent.com/tcb/env/overview?envId=blog-5gfbynhcfab334cd&rid=4">腾讯云</a>
+</div>'
