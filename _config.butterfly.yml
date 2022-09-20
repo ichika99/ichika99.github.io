@@ -88,10 +88,10 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page（主页图片）
-index_img: /img/Page/IndexImg.jpg
+index_img: https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg
 
 # If the banner of page not setting, it will show the top_img（默认顶部图片）
-default_top_img: /img/Page/IndexImg.jpg
+default_top_img: https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg
 
 # The banner image of archive page
 archive_img:
@@ -519,7 +519,7 @@ tag_ui: # 留空或 index
 # Website Background (网站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: 'url(/img/Miku15Years.jpg)'
+background: 'url(https://s3.bmp.ovh/imgs/2022/09/20/4f0b02719612f267.jpg)'
 
 # Footer Background
 footer_bg: transparent
@@ -967,7 +967,7 @@ gitcalendar:
   #   name: content
   #   index: 0
   user: ichika99
-  apiurl: 'https://git-calendar-phi.vercel.app'
+  apiurl: 'https://api.ichika.cc'
   minheight:
     pc: 280px #桌面端最小高度
     mibile: 0px #移动端最小高度

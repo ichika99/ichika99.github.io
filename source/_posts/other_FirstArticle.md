@@ -1,11 +1,11 @@
 ---
 title: 欢迎来到ichikaの小窝！
 date: 2022-09-14 22:02:11
-updated: 2022-9-15 16:00:00
+updated: 2022-9-19 20:00:00
 tags: 
 categories: 其它
 description: 我宣布，2022年9月14日，本站正式成立了！
-cover: /img/Article/other_FirstArticle/cover.jpg
+cover: https://s3.bmp.ovh/imgs/2022/09/20/9ca354ad61c2cddc.jpg
 sticky: 1
 toc: false
 ---
@@ -18,4 +18,4 @@ toc: false
 ## 这里也是留言板
 
 <b style="font-size:16px"><del>虽然这里还什么都没有，</del>先速速留个言吧</b>
-![](/img/Article/other_FirstArticle/Pic1.png)
+![](https://s3.bmp.ovh/imgs/2022/09/20/69ad449c795917df.png)

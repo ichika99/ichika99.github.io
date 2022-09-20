@@ -23,7 +23,7 @@
           "type": "markdown",
           "state": {
             "file": "other_UpdateLog.md",
-            "mode": "preview",
+            "mode": "source",
             "source": false
           }
         },
@@ -146,6 +146,9 @@
   "lastOpenFiles": [
     "other_FirstArticle.md",
     "other_UpdateLog.md",
-    "selfUse_Markdown.md"
+    "other_AboutMe.md",
+    "selfUse_Markdown.md",
+    "[Messages.md",
+    "[.md"
   ]
 }
