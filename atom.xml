@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ichikaの小窝</title>
+  <icon>http://ichika.cc/icon.png</icon>
+  <subtitle>被发现了嗼</subtitle>
+  <link href="http://ichika.cc/atom.xml" rel="self"/>
+  
+  <link href="http://ichika.cc/"/>
+  <updated>2023-01-11T00:58:56.853Z</updated>
+  <id>http://ichika.cc/</id>
+  
+  <author>
+    <name>ichika</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《吸血鬼幸存者》 电子阳痿速效治疗药</title>
+    <link href="http://ichika.cc/Article/game_VampireSurvivors/"/>
+    <id>http://ichika.cc/Article/game_VampireSurvivors/</id>
+    <published>2023-01-03T05:10:00.000Z</published>
+    <updated>2023-01-11T00:58:56.853Z</updated>
+    
+    
+    <summary type="html">别看这篇文章了，去玩《吸血鬼幸存者》吧！</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+    <category term="NS" scheme="http://ichika.cc/tags/NS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023游戏记录</title>
+    <link href="http://ichika.cc/Article/game_GameRecord2023/"/>
+    <id>http://ichika.cc/Article/game_GameRecord2023/</id>
+    <published>2022-12-31T16:00:00.000Z</published>
+    <updated>2022-12-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">2023年游戏记录</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🎮游戏记录" scheme="http://ichika.cc/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KGA2022</title>
+    <link href="http://ichika.cc/Article/game_KGA2022/"/>
+    <id>http://ichika.cc/Article/game_KGA2022/</id>
+    <published>2022-12-22T11:12:58.000Z</published>
+    <updated>2022-12-22T11:12:58.000Z</updated>
+    
+    
+    <summary type="html">欢迎来到KGA2022颁奖典礼的现场！</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制</title>
+    <link href="http://ichika.cc/Article/tech_WOLandRustdesk/"/>
+    <id>http://ichika.cc/Article/tech_WOLandRustdesk/</id>
+    <published>2022-12-13T14:42:49.000Z</published>
+    <updated>2022-12-13T14:42:49.000Z</updated>
+    
+    
+    <summary type="html">折腾了半天远程办公的方案，用WOL和Rustdesk实现自由开关机与流畅控制，不是很难，但是小坑很多。</summary>
+    
+    
+    
+    <category term="科技" scheme="http://ichika.cc/categories/%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="🖱️硬件" scheme="http://ichika.cc/tags/%F0%9F%96%B1%EF%B8%8F%E7%A1%AC%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>锐评TGA2022</title>
+    <link href="http://ichika.cc/Article/game_TGA2022/"/>
+    <id>http://ichika.cc/Article/game_TGA2022/</id>
+    <published>2022-12-09T04:18:00.000Z</published>
+    <updated>2022-12-09T04:18:00.000Z</updated>
+    
+    
+    <summary type="html">烂活一堆，the PlayStation awards + GOTY = TGA2022</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🕹️游戏随笔" scheme="http://ichika.cc/tags/%F0%9F%95%B9%EF%B8%8F%E6%B8%B8%E6%88%8F%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《宝可梦：朱/紫》 走向新时代的一次大跨步</title>
+    <link href="http://ichika.cc/Article/game_PokemonScarlet/"/>
+    <id>http://ichika.cc/Article/game_PokemonScarlet/</id>
+    <published>2022-12-01T07:30:58.000Z</published>
+    <updated>2022-12-01T07:30:11.000Z</updated>
+    
+    
+    <summary type="html">把《宝可梦 朱》打完了，还不错。</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+    <category term="NS" scheme="http://ichika.cc/tags/NS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>装个机 吧</title>
+    <link href="http://ichika.cc/Article/tech_SetupComputer/"/>
+    <id>http://ichika.cc/Article/tech_SetupComputer/</id>
+    <published>2022-11-15T01:05:00.000Z</published>
+    <updated>2022-11-15T01:05:00.000Z</updated>
+    
+    
+    <summary type="html">第一次装机，骑自行车去酒吧，做了套白色海景房</summary>
+    
+    
+    
+    <category term="科技" scheme="http://ichika.cc/categories/%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="🖱️硬件" scheme="http://ichika.cc/tags/%F0%9F%96%B1%EF%B8%8F%E7%A1%AC%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本站的一些样式魔改</title>
+    <link href="http://ichika.cc/Article/beautiful_MyBeautiful/"/>
+    <id>http://ichika.cc/Article/beautiful_MyBeautiful/</id>
+    <published>2022-11-04T05:07:00.000Z</published>
+    <updated>2022-12-22T06:07:00.000Z</updated>
+    
+    
+    <summary type="html">基于butterfly主题修改的一些个人样式，直接CV的，不保证能用</summary>
+    
+    
+    
+    <category term="美化" scheme="http://ichika.cc/categories/%E7%BE%8E%E5%8C%96/"/>
+    
+    
+    <category term="🦋Butterfly" scheme="http://ichika.cc/tags/%F0%9F%A6%8BButterfly/"/>
+    
+    <category term="🔵Hexo" scheme="http://ichika.cc/tags/%F0%9F%94%B5Hexo/"/>
+    
+    <category term="🖥️代码" scheme="http://ichika.cc/tags/%F0%9F%96%A5%EF%B8%8F%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聊聊DOTA，与CNDOTA</title>
+    <link href="http://ichika.cc/Article/game_DotaAfterTI11/"/>
+    <id>http://ichika.cc/Article/game_DotaAfterTI11/</id>
+    <published>2022-11-03T04:18:00.000Z</published>
+    <updated>2022-11-03T04:18:00.000Z</updated>
+    
+    
+    <summary type="html">六年无冠，历史最烂成绩，时代已经过去了</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🕹️游戏随笔" scheme="http://ichika.cc/tags/%F0%9F%95%B9%EF%B8%8F%E6%B8%B8%E6%88%8F%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给博客添加腾讯地图定位并制作个性欢迎</title>
+    <link href="http://ichika.cc/Article/beautiful_IPLocation/"/>
+    <id>http://ichika.cc/Article/beautiful_IPLocation/</id>
+    <published>2022-10-14T03:05:00.000Z</published>
+    <updated>2022-12-22T03:05:00.000Z</updated>
+    
+    
+    <summary type="html">CV的时候看到有些博客欢迎中有显示地理位置，便试着引入腾讯的ip定位服务做了更多个性化的欢迎页面。</summary>
+    
+    
+    
+    <category term="美化" scheme="http://ichika.cc/categories/%E7%BE%8E%E5%8C%96/"/>
+    
+    
+    <category term="🦋Butterfly" scheme="http://ichika.cc/tags/%F0%9F%A6%8BButterfly/"/>
+    
+    <category term="🔵Hexo" scheme="http://ichika.cc/tags/%F0%9F%94%B5Hexo/"/>
+    
+    <category term="🖥️代码" scheme="http://ichika.cc/tags/%F0%9F%96%A5%EF%B8%8F%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用网站记录</title>
+    <link href="http://ichika.cc/Article/share_NetRecord/"/>
+    <id>http://ichika.cc/Article/share_NetRecord/</id>
+    <published>2022-10-08T01:05:00.000Z</published>
+    <updated>2022-10-14T06:48:00.000Z</updated>
+    
+    
+    <summary type="html">记录一下常用网站，省的找了</summary>
+    
+    
+    
+    <category term="分享" scheme="http://ichika.cc/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="📄小窝の内务" scheme="http://ichika.cc/tags/%F0%9F%93%84%E5%B0%8F%E7%AA%9D%E3%81%AE%E5%86%85%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>东北日记</title>
+    <link href="http://ichika.cc/Article/life_NorthEastDiary/"/>
+    <id>http://ichika.cc/Article/life_NorthEastDiary/</id>
+    <published>2022-10-03T14:30:00.000Z</published>
+    <updated>2022-10-07T02:30:00.000Z</updated>
+    
+    
+    <summary type="html">首页文章太少了，随便写点吧</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机密文件-001</title>
+    <link href="http://ichika.cc/Article/secret_001/"/>
+    <id>http://ichika.cc/Article/secret_001/</id>
+    <published>2022-09-23T15:48:00.000Z</published>
+    <updated>2022-10-11T15:48:00.000Z</updated>
+    
+    
+    <summary type="html">系统载入中---机密等级：？？？---请输入口令</summary>
+    
+    
+    
+    
+    <category term="🔒unknown" scheme="http://ichika.cc/tags/%F0%9F%94%92unknown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于</title>
+    <link href="http://ichika.cc/Article/other_AboutMe/"/>
+    <id>http://ichika.cc/Article/other_AboutMe/</id>
+    <published>2022-09-20T03:06:00.000Z</published>
+    <updated>2022-09-27T08:05:00.000Z</updated>
+    
+    
+    <summary type="html">如果你很好奇，就来这里看看吧。</summary>
+    
+    
+    
+    <category term="站点相关" scheme="http://ichika.cc/categories/%E7%AB%99%E7%82%B9%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="🎉你好" scheme="http://ichika.cc/tags/%F0%9F%8E%89%E4%BD%A0%E5%A5%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更新日志</title>
+    <link href="http://ichika.cc/Article/other_UpdateLog/"/>
+    <id>http://ichika.cc/Article/other_UpdateLog/</id>
+    <published>2022-09-19T07:35:00.000Z</published>
+    <updated>2023-01-06T04:14:00.000Z</updated>
+    
+    
+    <summary type="html">站点更新日志。</summary>
+    
+    
+    
+    <category term="站点相关" scheme="http://ichika.cc/categories/%E7%AB%99%E7%82%B9%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="📄小窝の内务" scheme="http://ichika.cc/tags/%F0%9F%93%84%E5%B0%8F%E7%AA%9D%E3%81%AE%E5%86%85%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown备忘</title>
+    <link href="http://ichika.cc/Article/selfUse_Markdown/"/>
+    <id>http://ichika.cc/Article/selfUse_Markdown/</id>
+    <published>2022-09-15T08:05:00.000Z</published>
+    <updated>2022-09-29T06:49:00.000Z</updated>
+    
+    
+    <summary type="html">MD及专有语法备忘。</summary>
+    
+    
+    
+    <category term="站点相关" scheme="http://ichika.cc/categories/%E7%AB%99%E7%82%B9%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="🖥️代码" scheme="http://ichika.cc/tags/%F0%9F%96%A5%EF%B8%8F%E4%BB%A3%E7%A0%81/"/>
+    
+    <category term="📄小窝の内务" scheme="http://ichika.cc/tags/%F0%9F%93%84%E5%B0%8F%E7%AA%9D%E3%81%AE%E5%86%85%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎来到ichikaの小窝！</title>
+    <link href="http://ichika.cc/Article/other_FirstArticle/"/>
+    <id>http://ichika.cc/Article/other_FirstArticle/</id>
+    <published>2022-09-14T14:02:11.000Z</published>
+    <updated>2022-09-29T06:49:00.000Z</updated>
+    
+    
+    <summary type="html">我宣布，2022年9月14日，本站正式成立了！</summary>
+    
+    
+    
+    <category term="站点相关" scheme="http://ichika.cc/categories/%E7%AB%99%E7%82%B9%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="🎉你好" scheme="http://ichika.cc/tags/%F0%9F%8E%89%E4%BD%A0%E5%A5%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022游戏记录</title>
+    <link href="http://ichika.cc/Article/game_GameRecord2022/"/>
+    <id>http://ichika.cc/Article/game_GameRecord2022/</id>
+    <published>2021-12-31T16:00:00.000Z</published>
+    <updated>2022-12-18T05:32:00.000Z</updated>
+    
+    
+    <summary type="html">老头环、异度3、splatoon3、破晓传奇、真女5</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🎮游戏记录" scheme="http://ichika.cc/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021游戏记录</title>
+    <link href="http://ichika.cc/Article/game_GameRecord2021/"/>
+    <id>http://ichika.cc/Article/game_GameRecord2021/</id>
+    <published>2020-12-31T16:00:00.000Z</published>
+    <updated>2021-12-31T15:59:59.000Z</updated>
+    
+    
+    <summary type="html">戴森球、歌姬计划、TLOU2、OSU、双人成行、赛马娘、弹丸论破、极限脱出、节奏光剑</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🎮游戏记录" scheme="http://ichika.cc/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020游戏记录</title>
+    <link href="http://ichika.cc/Article/game_GameRecord2020/"/>
+    <id>http://ichika.cc/Article/game_GameRecord2020/</id>
+    <published>2019-12-31T16:00:00.000Z</published>
+    <updated>2020-12-31T15:59:59.000Z</updated>
+    
+    
+    <summary type="html">P5R、十三机兵、动森、群星、ff7re、对马岛、2077</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🎮游戏记录" scheme="http://ichika.cc/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+</feed>
