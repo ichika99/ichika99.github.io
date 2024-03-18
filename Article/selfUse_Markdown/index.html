@@ -1,0 +1,652 @@
+<!DOCTYPE html><!--                                                ._      _     _ _                              
+(_)    | |   (_) |          _                  
+ _  ___| |__  _| | ____ _  (_)                 
+| |/ __| '_ \| | |/ / _` |                     
+| | (__| | | | |   < (_| |  _                  
+|_|\___|_| |_|_|_|\_\__,_| (_)               _ 
+\ \        / / | |                          | |
+ \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |
+  \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | |
+   \  /\  /  __/ | (_| (_) | | | | | |  __/ |_|
+    \/  \/ \___|_|\___\___/|_| |_| |_|\___| (_)
+                                               --><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Markdown备忘 | ichikaの小窝</title><meta name="keywords" content="🖥️代码,📄小窝の内务"><meta name="author" content="ichika"><meta name="copyright" content="ichika"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MD及专有语法备忘。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown备忘">
+<meta property="og:url" content="http://ichika.cc/Article/selfUse_Markdown/index.html">
+<meta property="og:site_name" content="ichikaの小窝">
+<meta property="og:description" content="MD及专有语法备忘。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.ichika.cc/typora/202210141538929.jpg!cover">
+<meta property="article:published_time" content="2022-09-15T08:05:00.000Z">
+<meta property="article:modified_time" content="2022-09-29T06:49:00.000Z">
+<meta property="article:author" content="ichika">
+<meta property="article:tag" content="🖥️代码">
+<meta property="article:tag" content="📄小窝の内务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.ichika.cc/typora/202210141538929.jpg!cover"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://ichika.cc/Article/selfUse_Markdown/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.ichika.cc/cdn/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":250},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ichika","link":"链接: ","source":"来源: ichikaの小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown备忘',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-29 14:49:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/console.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3652097_dp26616p5x6.css"><script src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script><script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script> LA.init({id:"JqAEr98WCPCHb0eq",ck:"JqAEr98WCPCHb0eq"})</script><script>new LingQue.Monitor().init({id:"JqAGJs9NzTO9yoVw",sendSuspicious:true});</script><script src="/js/talks.js"></script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="ichikaの小窝" type="application/atom+xml">
+</head><body><div id="web_bg" style="background:url(https://cdn.ichika.cc/typora/202210141538929.jpg);background-attachment: local;background-position: center;background-size: cover;background-repeat: no-repeat;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/HeadIcon.jpg" onerror="onerror=null;src='/img/Page/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5470086332" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://github.com/ichika99" target="_blank" title="Github"><i class="fab fa-github"></i></a></div><div id="sidebar-welcome-info"><div class="loading-container"></div></div><div class="menus_items page-name-visible"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 全部</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-handshake"></i><span> 互动</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Article/other_FirstArticle/"><i class="fa-fw fas fa-meteor"></i><span> 须知</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/talks/"><i class="fa-fw fas fa-bomb"></i><span> 动态</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 友人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-users"></i><span> 朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-circle-info"></i><span> 关于</span></a></li><li><a class="site-page child" href="/Article/other_UpdateLog/"><i class="fa-fw fas fa-file"></i><span> 更新日志</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://nav.ichika.cc"><i class="fa-fw fas fa-globe"></i><span> 导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://pan.ichika.cc"><i class="fa-fw fas fa-cloud"></i><span> 分享</span></a></li></ul></div></div><div class="menus_items left_item"><div class="menus_item"><a class="site-page group undefined" title="站点导航" href="javascript:void(0);"><i class="fa-fw fas fa-grip-vertical" style="transform:none;font-size:1.4rem"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.ichika.cc" title="主页"><img alt="个人主页" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.jpg"/>主页</a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.ichika.cc" title="GitHub"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/github.png"/>GitHub线路</a></li><li><a class="site-page child" href="https://ichika.cc" title="腾讯云"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/tecentCloud.png"/>腾讯云线路</a></li></ul></div></div></div></div><div id="console-blur"></div><div id="console"><div id="console-head"><h1 class="console-title">小窝控制中心</h1><div id="console-return"><i class="fas fa-chevron-left" onclick="backToMenu()"></i></div><div class="console-close"><i class="fas fa-xmark" onclick="showConsole()"></i></div></div><div id="console-content"><div id="console-secmenu"></div><div id="console-main"><div id="console-settings"><div id="settings-bg" onclick="showBgSetting()"><span>背景</span><i class="far fa-image"></i></div><div id="settings-layout" onclick="showLayoutSetting()"><span>设置</span><i class="fas fa-layer-group"></i></div><div id="settings-data" onclick="showData()"><span>统计</span><i class="fas fa-chart-pie"></i></div></div><div id="console-show"><div id="show-weather"><div id="he-plugin-standard"><div class="comments-load"></div></div><script>WIDGET = {
+  "CONFIG": {
+    "layout": "1",
+    "width": 500,
+    "height": 180,
+    "background": "5",
+    "dataColor": "4C4948",
+    "aqiColor": "4C4948",
+    "borderRadius": 10,
+    "key": "212c5f68de69458381b2686ac2cf21fc"
+  }
+}</script><script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0" defer></script></div><div class="show-comments"><p>最新评论</p><div class="comments-content"><div class="comments-load"></div></div></div></div></div><div id="console-bottom"><div id="aplayer-music"><div class="aplayer no-destroy" data-listFolded="true" data-fixed="true" data-id="7646736059" preload="none" data-server="tencent" data-type="playlist" data-volume="0.3" data-order="random"></div></div><div id="quick-button"><div id="quick-fullscreen" onclick="fullScreen()" title="全屏模式"><i class="fas fa-expand"></i></div><div id="quick-darkmode" onclick="darkMode()" title="夜间模式"><i class="fas fa-moon"></i></div><div id="quick-readmode" onclick="readMode()" title="阅读模式"><i class="fas fa-book-open"></i></div></div></div></div></div><button type="button" id="consoleButton" title="控制中心" onclick="showConsole()" style="right:50px;bottom:60px;"><i class="fas fa-screwdriver-wrench"></i></button><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div class="menus_items left_item"><div class="menus_item"><a class="site-page group undefined" title="站点导航" href="javascript:void(0);"><i class="fa-fw fas fa-grip-vertical" style="transform:none;font-size:1.4rem"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.ichika.cc" title="主页"><img alt="个人主页" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.jpg"/>主页</a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.ichika.cc" title="GitHub"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/github.png"/>GitHub线路</a></li><li><a class="site-page child" href="https://ichika.cc" title="腾讯云"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/tecentCloud.png"/>腾讯云线路</a></li></ul></div></div><span id="blog_name"><a id="site-name" href="/">ichikaの小窝</a></span><div id="menus"></div><div class="menus_items page-name-visible"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 全部</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-handshake"></i><span> 互动</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Article/other_FirstArticle/"><i class="fa-fw fas fa-meteor"></i><span> 须知</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/talks/"><i class="fa-fw fas fa-bomb"></i><span> 动态</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 友人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-users"></i><span> 朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-circle-info"></i><span> 关于</span></a></li><li><a class="site-page child" href="/Article/other_UpdateLog/"><i class="fa-fw fas fa-file"></i><span> 更新日志</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://nav.ichika.cc"><i class="fa-fw fas fa-globe"></i><span> 导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://pan.ichika.cc"><i class="fa-fw fas fa-cloud"></i><span> 分享</span></a></li></ul></div></div><div class="page-name-invisible" id="page-name" onclick="scrollToTop()"><a id="page-title"></a></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" title="搜索" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="travellings-button"><a class="site-page social-icon search" title="开往" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fas fa-subway fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Markdown备忘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-15T08:05:00.000Z" title="发表于 2022-09-15 16:05:00">2022-09-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-29T06:49:00.000Z" title="更新于 2022-09-29 14:49:00">2022-09-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AB%99%E7%82%B9%E7%9B%B8%E5%85%B3/">站点相关</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="Markdown备忘"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/Article/selfUse_Markdown/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><blockquote>
+<p><b style="font-size:16px">文章参考：</b></p>
+<a class="btn-beautify pink larger" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89" target="" 
+  title="Butterfly安装文档"><i class="far fa-hand-point-right"></i><span>Butterfly安装文档</span></a>
+<a class="btn-beautify purple larger" href="https://markdown.com.cn" target="" 
+  title="Markdown文档"><i class="far fa-hand-point-right"></i><span>Markdown文档</span></a>
+</blockquote>
+<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><hr>
+<h2 id="文本类"><a href="#文本类" class="headerlink" title="文本类"></a>文本类</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>使用#表示标题</p>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Markdown语法</span></span><br><span class="line"><span class="section">## 文本类</span></span><br><span class="line"><span class="section">### 标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><p>使用”_“或”*“表示斜体，”__“或”**“表示粗体，”~~“表示删除线</p>
+<div class="note info flat"><p>“_“与”*“等价。</p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><strong>这个</strong>和__这个__都是粗体<br><em>这个</em>和_这个_都是斜体<br><em><strong>这个</strong></em>和___这个___同时是粗体和斜体<br><del>这是删除线</del></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**这个**</span>和<span class="strong">__这个__</span>都是粗体</span><br><span class="line"><span class="emphasis">*这个*</span>和<span class="emphasis">_这个_</span>都是斜体</span><br><span class="line"><span class="strong">**<span class="emphasis">*这个*</span>**</span>和<span class="strong">__<span class="emphasis">_这个_</span>__</span>同时是粗体和斜体</span><br><span class="line">~~这是删除线~~</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><blockquote>
+<p>这是一级引用</p>
+<blockquote>
+<p>这是二级引用</p>
+<blockquote>
+<ul>
+<li>这是带有部分<strong>粗体</strong></li>
+<li>这是带有<em>斜体</em>的三级引用</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一级引用</span><br><span class="line">&gt;&gt;这是二级引用</span><br><span class="line">&gt;&gt;&gt;- 这是带有部分<span class="strong">**粗体**</span></span><br><span class="line">&gt;&gt;&gt;- 这是带有<span class="emphasis">*斜体*</span>的三级引用</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>主要格式<code>[text](url)</code></p>
+<div class="note warning flat"><p>引用型链接似乎不能正常使用。</p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><a href="https://ichika.cc/">这是一个链接</a><br><a href="https://ichika.cc/" title="传送至主页">这是一个带说明的链接</a><br>快速链接<a href="https://ichika.cc/">https://ichika.cc</a> <a href="mailto:&#x38;&#48;&#54;&#x37;&#x30;&#x38;&#x34;&#x38;&#48;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#x38;&#48;&#54;&#x37;&#x30;&#x38;&#x34;&#x38;&#48;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a><br>[引用型链接][1]<br>[1]: <a href="https://ichika.cc/">https://ichika.cc</a> ‘主页’<br><em><a href="https://ichika.cc/"><strong><code>语法嵌套</code></strong></a></em></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">这是一个链接</span>](<span class="link">https://ichika.cc</span>)</span><br><span class="line">[<span class="string">这是一个带说明的链接</span>](<span class="link">https://ichika.cc &quot;传送至主页&quot;</span>)</span><br><span class="line">快速链接<span class="language-xml">&lt;https://ichika.cc&gt;</span> &lt;806708480@qq.com&gt;</span><br><span class="line">[<span class="string">引用型链接</span>][<span class="symbol">1</span>]</span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">https://ichika.cc &#x27;主页&#x27;</span></span><br><span class="line"><span class="emphasis">*[<span class="string">**`语法嵌套`**</span>](<span class="link">https://ichika.cc</span>)*</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>使用\可以进行转义</p>
+<p>使用***创建分隔符</p>
+<p>可以直接插入html代码</p>
+<div class="note info flat"><p>Markdown中部分符号会自动转义。</p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p>转义* []</p>
+<hr>
+<p>分隔符</p>
+<div style="padding:10px;text-align:center;font-weight:bold">这是直接使用html的内容</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">转义\<span class="emphasis">* \[\]</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"><span class="strong">***</span></span></span><br><span class="line"><span class="strong"><span class="emphasis"></span></span></span><br><span class="line"><span class="strong"><span class="emphasis">分隔符</span></span></span><br><span class="line"><span class="strong"><span class="emphasis"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;padding:10px;text-align:center;font-weight:bold&quot;</span>&gt;</span></span>这是直接使用html的内容<span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="特殊区块"><a href="#特殊区块" class="headerlink" title="特殊区块"></a>特殊区块</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>使用”num.”的形式可构建有序列表</p>
+<p>使用+、-、*可构建无序列表</p>
+<div class="note info flat"><p>有序列表格式中的数字不必顺序，但实际会顺序显示。<br>相同标识符的无序列表被视为同一个列表，不同标识符的无序列表被视为不同列表。可缩进表示子列表。</p>
+</div>
+
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><ol>
+<li>这是有序列表</li>
+<li>这是有序列表</li>
+<li>这是有序列表</li>
+</ol>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<ul>
+<li>这是无序列表<ul>
+<li>这是无序子列表</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 这是有序列表</span><br><span class="line"><span class="bullet">3.</span> 这是有序列表</span><br><span class="line"><span class="bullet">8.</span> 这是有序列表</span><br><span class="line"><span class="bullet">-</span> 这是无序列表</span><br><span class="line"><span class="bullet">*</span> 这是无序列表</span><br><span class="line"><span class="bullet">+</span> 这是无序列表</span><br><span class="line"><span class="bullet">  +</span> 这是无序子列表</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>使用反单引号 ` 可表示代码，使用三反单引号 ```表示代码块，代码块起始符后可声明语言</p>
+<p>对于有内部有引号的代码，可在标识符中多加几个反单引号。</p>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><ul>
+<li><code>这个</code>是一个普通的代码</li>
+<li><code>再看看`这个`，这个</code>是内部带引号的代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这就是一个代码块了</span><br></pre></td></tr></table></figure></li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+</span> <span class="code">`这个`</span>是一个普通的代码</span><br><span class="line"><span class="bullet">+</span> <span class="code">``再看看`</span>这个<span class="code">`，这个`</span>`是内部带引号的代码</span><br><span class="line"><span class="code">```Test</span></span><br><span class="line"><span class="code">这就是一个代码块了</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>普通图片格式为<code>![text](url &quot;desc&quot;)</code></p>
+<p>带超链接的图片格式为<code>[![text(url &quot;desc&quot;)](link)</code></p>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg" alt="这是图片替代文本" title="Project Sekai 1st Anniversary by Rella"><br><a href="https://ichika.cc/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg" alt="这是图片替代文本" title="Project Sekai 1st Anniversary by Rella"></a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![这是图片替代文本](https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg &quot;Project Sekai 1st Anniversary by Rella&quot;)</span><br><span class="line">[![这是图片替代文本](https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg &quot;Project Sekai 1st Anniversary by Rella&quot;)](https://ichika.cc)</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+
+<h1 id="Hexo-amp-Butterfly专用格式"><a href="#Hexo-amp-Butterfly专用格式" class="headerlink" title="Hexo&amp;Butterfly专用格式"></a>Hexo&amp;Butterfly专用格式</h1><hr>
+<div class="note info flat"><p>这类格式仅在该主题下使用。</p>
+</div>
+<div class="note warning flat"><p>仅引用格式时须将%转义。</p>
+</div>
+<div class="note warning flat"><p><b>部分用法已被修改，专用于本博客使用，在其他场景下使用可能会失效。所有改动均已标注。</b></p>
+</div>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><h3 id="默认模板"><a href="#默认模板" class="headerlink" title="默认模板"></a>默认模板</h3><p>格式为<code>&#123;\% note [class] [no-icon] [style] %&#125;</code></p>
+<mark class="hl-label blue">class</mark>  <b>可选</b> 可用值default / primary / success / info / warning / danger<br><br>
+<mark class="hl-label blue">no-icon</mark>  <b>可选</b> 不显示图标<br><br>
+<mark class="hl-label blue">class</mark>  <b>可选</b> 可用值simple / modern / flat / disabled<br><br>
+
+
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><div class="note success simple"><p>这是simple类型</p>
+</div>
+
+<div class="note info flat"><p>这是flat类型</p>
+</div>
+
+<div class="note primary modern"><p>这是modern类型</p>
+</div>
+
+<div class="note danger no-icon disble simple"><p>这是simple no-icon类型</p>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note success simple %&#125;</span><br><span class="line">这是simple类型</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info flat %&#125;</span><br><span class="line">这是flat类型</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary modern %&#125;</span><br><span class="line">这是modern类型</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger no-icon disable %&#125;</span><br><span class="line">这是simple no-icon类型</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h3><p>格式为<code>&#123;\% note [color] &#39;[icon]&#39; [style] %&#125;</code></p>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 可用值default / blue / pink / red / purple / orange / green<br><br>
+<mark class="hl-label blue">icon</mark>  <b>可选</b> 图标来源<a target="_blank" rel="noopener" href="https://fontawesome.com/">fontawesome</a><br><br>
+<mark class="hl-label blue">style</mark>  <b>可选</b> 可用值simple / modern / flat / disabled<br><br>
+
+
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><div class="note default icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>这是simple类型</p>
+</div>
+
+<div class="note blue icon-padding flat"><i class="note-icon fas fa-bullhorn"></i><p>这是flat类型</p>
+</div>
+
+<div class="note pink icon-padding modern"><i class="note-icon fas fa-car-crash"></i><p>这是modern类型</p>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note default &#x27;fab fa-cc-visa&#x27; simple %&#125;</span><br><span class="line">这是simple类型</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note blue &#x27;fas fa-bullhorn&#x27; flat %&#125;</span><br><span class="line">这是flat类型</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note pink &#x27;fas fa-car-crash&#x27; modern %&#125;</span><br><span class="line">这是modern类型</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="tag-hide"><a href="#tag-hide" class="headerlink" title="tag-hide"></a>tag-hide</h2><h3 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h3><p>点击后可显示隐藏内容，适用少量文本，格式为<code>&#123;% hideInline [content],[display],[bg],[color] %&#125;</code></p>
+<mark class="hl-label red">content</mark>  隐藏文本内容<br><br>
+<mark class="hl-label blue">display</mark>  <b>可选</b> 按钮所显示文字<br><br>
+<mark class="hl-label blue">bg</mark>  <b>可选</b> 按钮背景颜色<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 按钮文字颜色
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">这是默认按钮</span></span></p>
+<p><span class="hide-inline"><button type="button" class="hide-button" style="background-color: #33dd33;color: #dd3333">自定义<br>  </button><span class="hide-content">自定义一下</span></span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% hideInline 这是默认按钮 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% hideInline 自定义一下,自定义,#33dd33,#dd3333 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><p>点击后可显示隐藏内容，适用大量各类内容，格式为<code>&#123;% hideBlock [display],[bg],[color] %&#125;content&#123;% endhideBlock %&#125;</code></p>
+<mark class="hl-label red">content</mark>  隐藏内容<br><br>
+<mark class="hl-label blue">display</mark>  <b>可选</b> 按钮所显示文字<br><br>
+<mark class="hl-label blue">bg</mark>  <b>可选</b> 按钮背景颜色<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 按钮文字颜色
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><div class="hide-block"><button type="button" class="hide-button" style="">Click
+    </button><div class="hide-content"><p>这是默认按钮</p>
+</div></div>
+
+<div class="hide-block"><button type="button" class="hide-button" style="background-color: #33dd33;color: #dd3333">自定义
+    </button><div class="hide-content"><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg" alt="这是图片替代文本" title="Project Sekai 1st Anniversary by Rella"></p>
+</div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% hideBlock %&#125;这是默认按钮&#123;% endhideBlock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% hideBlock 自定义,#33dd33,#dd3333 %&#125;![<span class="string">这是图片替代文本</span>](<span class="link">https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg &quot;Project Sekai 1st Anniversary by Rella&quot;</span>)&#123;% endhideBlock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="Toggle"><a href="#Toggle" class="headerlink" title="Toggle"></a>Toggle</h3><p>可展开显示或隐藏内容，适用大量各类内容，格式为<code>&#123;% hideToggle [display],[bg],[color] %&#125;content&#123;% endhideToggle %&#125;</code></p>
+<mark class="hl-label red">content</mark>  隐藏内容<br><br>
+<mark class="hl-label blue">display</mark>  <b>可选</b> 按钮所显示文字<br><br>
+<mark class="hl-label blue">bg</mark>  <b>可选</b> 按钮背景颜色<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 按钮文字颜色
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><details class="toggle" ><summary class="toggle-button" style=""></summary><div class="toggle-content"><p>这是默认按钮</p>
+</div></details>
+
+<details class="toggle" style="border: 1px solid #33dd33"><summary class="toggle-button" style="background-color: #33dd33;color: #dd3333">自定义</summary><div class="toggle-content"><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg" alt="这是图片替代文本" title="Project Sekai 1st Anniversary by Rella"></p>
+</div></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% hideToggle %&#125;这是默认按钮&#123;% endhideToggle %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% hideToggle 自定义,#33dd33,#dd3333 %&#125;![<span class="string">这是图片替代文本</span>](<span class="link">https://s3.bmp.ovh/imgs/2022/09/20/50f4a113b3e2eb73.jpg &quot;Project Sekai 1st Anniversary by Rella&quot;</span>)&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>可用于制作标签栏，格式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs [name],[index] %&#125;</span><br><span class="line">&lt;!-- tab [tabname]--&gt;</span><br><span class="line">content</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab [tabname]--&gt;</span><br><span class="line">content</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<mark class="hl-label red">name</mark>  tab名称<br><br>
+<mark class="hl-label blue">index</mark>  <b>可选</b> 初始选择子栏序号，-1为全部折叠<br><br>
+<mark class="hl-label blue">tabname</mark>  <b>可选</b> 子栏名称<br><br>
+<mark class="hl-label blue">content</mark>  <b>可选</b> 文字内容
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><div class="tabs" id="演示tabs"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示tabs-1">自定义名称</button></li><li class="tab active"><button type="button" data-href="#演示tabs-2">演示tabs 2</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示tabs-1"><p>test</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="演示tabs-2"><p>测试</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs 演示tabs,2 %&#125;</span><br><span class="line">&lt;!-- tab 自定义名称--&gt;</span><br><span class="line">test</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">测试</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p>按钮，格式为<code>&#123;% btn '[url]',[text],[icon],[color] [style] [layout] [position] [size],[target] %&#125;</code></p>
+<mark class="hl-label red">url</mark>  链接<br><br>
+<mark class="hl-label red">text</mark>  按钮所显示文字<br><br>
+<mark class="hl-label blue">icon</mark>  <b>可选</b> 按钮图标<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 按钮背景颜色或边框和文字颜色，可用值default / blue / pink / red / purple / orange / green<br><br>
+<mark class="hl-label blue">style</mark>  <b>可选</b> 按钮样式，默认实心或outline描边<br><br>
+<mark class="hl-label blue">layout</mark>  <b>可选</b> 按钮布局，默认line或block<br><br>
+<mark class="hl-label blue">position</mark>  <b>可选</b> 按钮位置，须选择layout为block，默认左边或center / right<br><br>
+<mark class="hl-label blue">size</mark>  <b>可选</b> 按钮大小，默认或larger<br><br>
+<mark class="hl-label blue">target</mark>  <b>可选</b> 链接打开方式，默认\_self，可选\_blank / \_parent / \_top / framename<br><br>
+<div class="note info flat"><p>此格式已被修改，新增target标签，但不影响原格式用法。</p>
+</div>
+<div class="note warning flat"><p>请严格遵守格式，留空须保留逗号，空格符相隔的元素可乱序输入。</p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><a class="btn-beautify " href="https://ichika.cc" target="_blank" 
+  title="在新标签页中打开主页"><span>在新标签页中打开主页</span></a><a class="btn-beautify pink outline" href="https://ichika.cc" target="" 
+  title="主页"><i class="fas fa-home"></i><span>主页</span></a><a class="btn-beautify orange larger" href="https://ichika.cc" target="" 
+  title="主页"><span>主页</span></a><a class="btn-beautify blue larger outline block right" href="https://ichika.cc" target="" 
+  title="主页"><i class="fas fa-home"></i><span>主页</span></a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% btn  &#x27;https://ichika.cc&#x27;,在新标签页中打开主页,,,<span class="emphasis">_blank %&#125;&#123;% btn  &#x27;https://ichika.cc&#x27;,主页,fas fa-home,pink outline %&#125;&#123;% btn  &#x27;https://ichika.cc&#x27;,主页,,orange larger %&#125;&#123;% btn  &#x27;https://ichika.cc&#x27;,主页,fas fa-home,blue larger outline block right %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="InlineImg"><a href="#InlineImg" class="headerlink" title="InlineImg"></a>InlineImg</h2><p>可以在文本中嵌入图片，格式为<code>&#123;% inlineImg [src] [height] %&#125;</code></p>
+<mark class="hl-label red">src</mark>  图片链接<br><br>
+<mark class="hl-label blue">height</mark>  <b>可选</b> 高度限制
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p><del>我老婆</del>网站的图标是<img class="inline-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/favicon.png" />，すき！<br>什么你说你看不清？<img class="inline-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/favicon.png" style="height:100px"/>，够清楚了嘛！</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~~我老婆~~网站的图标是&#123;% inlineImg img/Page/favicon.png %&#125;，すき！</span><br><span class="line">什么你说你看不清？&#123;% inlineImg img/Page/favicon.png 100px %&#125;，够清楚了嘛！</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Label"><a href="#Label" class="headerlink" title="Label"></a>Label</h2><p>可以在文本中插入标签，格式为<code>&#123;% label [text] [color] %&#125;</code></p>
+<mark class="hl-label red">text</mark>  文字内容<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 背景颜色，可用值default / blue / pink / red / purple / orange / green
+<div class="note warning flat"><p>使用label的段落可能会使Markdown标记失效，请尽量使用html。</p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><p>在这句话当中，<mark class="hl-label default">这是默认标签</mark> ，<mark class="hl-label pink">这是彩色标签</mark> ，<b>这段是html</b></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这句话当中，&#123;% label 这是默认标签 %&#125;，&#123;% label 这是彩色标签 pink %&#125;，<span class="language-xml"><span class="tag">&lt;<span class="name">b</span>&gt;</span></span>这段是html<span class="language-xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Timeline"><a href="#Timeline" class="headerlink" title="Timeline"></a>Timeline</h2><p>以时间轴的方式记录内容，格式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% timeline [title],[color] %&#125;</span><br><span class="line">&lt;!-- timeline [title] --&gt;</span><br><span class="line">content</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline [title] --&gt;</span><br><span class="line">content</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
+<mark class="hl-label red">title</mark>  标题（时间）<br><br>
+<mark class="hl-label blue">color</mark>  <b>可选</b> 主题颜色，可用值default / blue / pink / red / purple / orange / green<br><br>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#a-1">示例</button></li><li class="tab"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="a-1"><div class="timeline pink"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2022</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>9.20</p>
+</div></div><div class='timeline-item-content'><p>今天是2022年9月20日<br>那么明天就是9月21日了</p>
+</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>9.21</p>
+</div></div><div class='timeline-item-content'><p>今天是2022年9月21日<br>那么昨天就是9月20日了</p>
+</div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% timeline 2022,pink %&#125;</span><br><span class="line">&lt;!-- timeline 9.20 --&gt;</span><br><span class="line">今天是2022年9月20日</span><br><span class="line">那么明天就是9月21日了</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 9.21 --&gt;</span><br><span class="line">今天是2022年9月21日</span><br><span class="line">那么昨天就是9月20日了</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="flink"><a href="#flink" class="headerlink" title="flink"></a>flink</h2><p>友情链接模板，在模板前后加入<code>&#123;% flink %&#125;&#123;% endflink %&#125;</code></p>
+<div class="note danger flat"><p>由于友链格式要求过于严格，本人尝试多次后只意外成功过一次，其余皆报错，极度不建议使用。<br><del>更逆天的是官方给的示例代码也报错</del></p>
+</div>
+<div class="tabs" id="a"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#a-1">示例</button></li><li class="tab active"><button type="button" data-href="#a-2">Markdown</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="a-1"><p>你不会觉得真的能示例出来吧？</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="a-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;% flink %&#125;</span><br><span class="line"><span class="bullet">-</span> class<span class="emphasis">_name: 支持</span></span><br><span class="line"><span class="emphasis">  class_</span>desc: </span><br><span class="line">  link<span class="emphasis">_list:</span></span><br><span class="line"><span class="emphasis">    - name: Hexo</span></span><br><span class="line"><span class="emphasis">      link: https://hexo.io/zh-cn/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/hexo.svg</span></span><br><span class="line"><span class="emphasis">      descr: 框架支持</span></span><br><span class="line"><span class="emphasis">    - name: Butterfly</span></span><br><span class="line"><span class="emphasis">      link: https://butterfly.js.org/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/butterfly.png</span></span><br><span class="line"><span class="emphasis">      descr: 主题提供</span></span><br><span class="line"><span class="emphasis">    - name: Github</span></span><br><span class="line"><span class="emphasis">      link: https://github.com/ichika99/ichika99.github.io/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/github.png</span></span><br><span class="line"><span class="emphasis">      descr: 项目托管</span></span><br><span class="line"><span class="emphasis">    - name: 阿里云</span></span><br><span class="line"><span class="emphasis">      link: https://cn.aliyun.com/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/aliCloud.jpg</span></span><br><span class="line"><span class="emphasis">      descr: 域名提供</span></span><br><span class="line"><span class="emphasis">    - name: 腾讯云</span></span><br><span class="line"><span class="emphasis">      link: https://cloud.tencent.com/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/tecentCloud.png</span></span><br><span class="line"><span class="emphasis">      descr: 评论系统支持</span></span><br><span class="line"><span class="emphasis">    - name: Twikoo</span></span><br><span class="line"><span class="emphasis">      link: https://twikoo.js.org/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/twikoo.png</span></span><br><span class="line"><span class="emphasis">      descr: 评论系统支持</span></span><br><span class="line"><span class="emphasis">    - name: Vercel</span></span><br><span class="line"><span class="emphasis">      link: https://vercel.com/</span></span><br><span class="line"><span class="emphasis">      avatar: /img/Article/Link/Vercel.png</span></span><br><span class="line"><span class="emphasis">      descr: 技术支持</span></span><br><span class="line"><span class="emphasis">&#123;% endflink %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h1 id="ichikaの小窝专用样式"><a href="#ichikaの小窝专用样式" class="headerlink" title="ichikaの小窝专用样式"></a>ichikaの小窝专用样式</h1><hr>
+<div class="note info flat"><p>本部分为自定义样式，仅在该博客下使用。为防止与其他样式冲突，此样式均以<strong>ick</strong>开头。</p>
+</div>
+
+<h2 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h2><p>格式<code>&#123;% ickVideo [src] %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;&quot;</span> <span class="attr">controls</span> <span class="attr">preload</span>&gt;</span><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&#x27;[src]&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文字隐藏"><a href="#文字隐藏" class="headerlink" title="文字隐藏"></a>文字隐藏</h2><p>可隐藏文字，鼠标悬浮时显示，格式<code>&#123;% ickHideTag [text] %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;ickHideTag&quot;</span>&gt;</span>[text]<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickHideTag</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: black;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickHideTag</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>: .<span class="number">3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="链接-1"><a href="#链接-1" class="headerlink" title="链接"></a>链接</h2><p>链接使用特定样式，格式<code>&#123;% ickA [text],[url] %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;ickA&quot;</span>&gt;</span>[text]<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickA</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>:<span class="number">#49A6E9</span><span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>:none<span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>:<span class="number">4px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-bottom</span>:<span class="number">2px</span> solid <span class="number">#49A6E9</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickA</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>:<span class="number">#49A6E9</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>:white<span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-radius</span>:<span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="外链标签"><a href="#外链标签" class="headerlink" title="外链标签"></a>外链标签</h2><p>格式<code>&#123;% ickBtn [target],[text],[url],[icon] %&#125;</code></p>
+<p>其中<mark class="hl-label default">[target]</mark> 可选，为_target属性，并自动判断链接站点类型。</p>
+<mark class="hl-label default">[target]</mark> 为网页图标，可选。
+
+<div class="ickBtn">
+    <a href="https://ichika.cc" target="_self">
+        <div class="ickBtn-imgbox" style="background:url(/img/Page/HeadIcon.jpg);background-size:cover;"></div>
+        <div class="ickBtn-infobox">
+            <div class="ickBtn-sitetype">
+            站内链接
+            </div>
+            <div class="ickBtn-sitename">
+            前往首页
+            </div>
+        </div>
+        <div class="ickBtn-goto fas fa-chevron-right">
+        </div>
+    </a>
+</div>
+
+<div class="ickBtn">
+    <a href="https://www.baidu.com" target="_blank">
+        <div class="ickBtn-imgbox" style="background:url(https://favicon.ichika.cc/get.php?url=https://www.baidu.com);background-size:cover;"></div>
+        <div class="ickBtn-infobox">
+            <div class="ickBtn-sitetype">
+            站外链接
+            </div>
+            <div class="ickBtn-sitename">
+            前往百度
+            </div>
+        </div>
+        <div class="ickBtn-goto fas fa-chevron-right">
+        </div>
+    </a>
+</div>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">310px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>:<span class="number">70px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>:<span class="built_in">var</span>(--light-grey);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="built_in">var</span>(--dark-grey);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-radius</span>:<span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>:<span class="number">5px</span> <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>:<span class="number">15px</span> auto;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">position</span>:relative;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>:<span class="number">0.3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>:<span class="built_in">var</span>(--ichika-color);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="built_in">var</span>(--ichika-color);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">15px</span> <span class="built_in">var</span>(--ichika-color);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">350px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>:<span class="number">0.3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.ickBtn-goto</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>:inline;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>:<span class="number">0.3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.ickBtn-sitename</span>,<span class="selector-class">.ickBtn</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.ickBtn-sitetype</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>:white;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>:<span class="number">0.3s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn</span> &gt; <span class="selector-tag">a</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>:flex;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>:none<span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>:<span class="built_in">var</span>(--font-color)<span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-imgbox</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>:<span class="number">50px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">50px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-size</span>:cover;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>:auto <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-radius</span>:<span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-goto</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>:<span class="number">14px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">position</span>:absolute;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">right</span>:<span class="number">15px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">top</span>:<span class="number">28px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>:white;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>:none;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-infobox</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>:<span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding-left</span>:<span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">220px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-sitename</span>,<span class="selector-class">.ickBtn-sitetype</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>:flex;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-sitetype</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="built_in">var</span>(--dark-grey);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">line-height</span>:<span class="number">16px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>:<span class="number">12px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.ickBtn-sitename</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-weight</span>:bold;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">line-height</span>:<span class="number">40px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;[url]&quot;</span> <span class="attr">target</span>=<span class="string">&quot;[target]&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn-imgbox&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background:url([icon]);background-size:cover;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn-infobox&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn-sitetype&quot;</span>&gt;</span></span><br><span class="line">            [target]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn-sitename&quot;</span>&gt;</span></span><br><span class="line">            [text]</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ickBtn-goto fas fa-chevron-right&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Markdown备忘</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://ichika.cc/Article/selfUse_Markdown/">http://ichika.cc/Article/selfUse_Markdown/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>ichika</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2022-09-15</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-09-29</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%F0%9F%96%A5%EF%B8%8F%E4%BB%A3%E7%A0%81/">🖥️代码</a><a class="post-meta__tags" href="/tags/%F0%9F%93%84%E5%B0%8F%E7%AA%9D%E3%81%AE%E5%86%85%E5%8A%A1/">📄小窝の内务</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.ichika.cc/typora/202210141538929.jpg!cover" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/Page/WechatPay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/WechatPay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/Page/AliPay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/AliPay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Article/other_UpdateLog/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202210141536098.png!cover" onerror="onerror=null;src='/img/Page/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">更新日志</div></div></a></div><div class="next-post pull-right"><a href="/Article/other_FirstArticle/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202210141535193.jpg!cover" onerror="onerror=null;src='/img/Page/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">欢迎来到ichikaの小窝！</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Article/beautiful_IPLocation/" title="给博客添加腾讯地图定位并制作个性欢迎"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202210141544062.png!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-14</div><div class="title">给博客添加腾讯地图定位并制作个性欢迎</div></div></a></div><div><a href="/Article/beautiful_MyBeautiful/" title="本站的一些样式魔改"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/WallPaper/illust_101965789_20221019_154953.png!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-04</div><div class="title">本站的一些样式魔改</div></div></a></div><div><a href="/Article/other_UpdateLog/" title="更新日志"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202210141536098.png!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-19</div><div class="title">更新日志</div></div></a></div><div><a href="/Article/share_NetRecord/" title="常用网站记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202210141513175.png!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-08</div><div class="title">常用网站记录</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><img class="card-info-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/page/IconBig.jpg!cover"/><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/HeadIcon.jpg" onerror="this.onerror=null;this.src='/img/Page/friend_404.gif'" alt="avatar"/></div><div class="author-info-me"><div class="author-info__name">ichika</div><div class="author-info__description">Hello,gamer!</div></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" href="/Article/other_AboutMe/"><span>了解更多</span><i class="fas fa-arrow-circle-right"></i></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5470086332" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://github.com/ichika99" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div id="welcome-info"><div class="loading-container"></div></div><div class="item-headline"><span>ichikaの留言：</span></div><div class="announcement_content">欢迎光临！如有使用问题请联系我，谢谢。</div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_Yakuza8/&quot;)"><a class="thumbnail" href="/Article/game_Yakuza8/" title="《人中之龙8》 堂岛之龙与横滨英雄的故事"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202403181719041.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="《人中之龙8》 堂岛之龙与横滨英雄的故事"/></a><div class="content"><a class="title" href="/Article/game_Yakuza8/" title="《人中之龙8》 堂岛之龙与横滨英雄的故事">《人中之龙8》 堂岛之龙与横滨英雄的故事</a><time datetime="2024-03-18T09:10:00.000Z" title="发表于 2024-03-18 17:10:00">2024-03-18</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_GranblueFantasyRelink/&quot;)"><a class="thumbnail" href="/Article/game_GranblueFantasyRelink/" title="《碧蓝幻想 relink》 一起成为骑空士吧！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202402021732960.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="《碧蓝幻想 relink》 一起成为骑空士吧！"/></a><div class="content"><a class="title" href="/Article/game_GranblueFantasyRelink/" title="《碧蓝幻想 relink》 一起成为骑空士吧！">《碧蓝幻想 relink》 一起成为骑空士吧！</a><time datetime="2024-02-26T09:10:00.000Z" title="发表于 2024-02-26 17:10:00">2024-02-26</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_KGA2023/&quot;)"><a class="thumbnail" href="/Article/game_KGA2023/" title="KGA2023&amp;大概是年终总结"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202402021701928.png!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="KGA2023&amp;大概是年终总结"/></a><div class="content"><a class="title" href="/Article/game_KGA2023/" title="KGA2023&amp;大概是年终总结">KGA2023&amp;大概是年终总结</a><time datetime="2024-02-02T09:12:58.000Z" title="发表于 2024-02-02 17:12:58">2024-02-02</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_Cocoon/&quot;)"><a class="thumbnail" href="/Article/game_Cocoon/" title="《Cocoon》 流畅的惊艳解谜体验"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202401261634318.jpeg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="《Cocoon》 流畅的惊艳解谜体验"/></a><div class="content"><a class="title" href="/Article/game_Cocoon/" title="《Cocoon》 流畅的惊艳解谜体验">《Cocoon》 流畅的惊艳解谜体验</a><time datetime="2024-01-26T09:10:00.000Z" title="发表于 2024-01-26 17:10:00">2024-01-26</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_GameRecord2024/&quot;)"><a class="thumbnail" href="/Article/game_GameRecord2024/" title="2024游戏记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202402261459657.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="2024游戏记录"/></a><div class="content"><a class="title" href="/Article/game_GameRecord2024/" title="2024游戏记录">2024游戏记录</a><time datetime="2023-12-31T16:00:00.000Z" title="发表于 2024-01-01 00:00:00">2024-01-01</time></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Markdown语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">文本类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.1.1.</span> <span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E8%B0%83"><span class="toc-number">1.1.2.</span> <span class="toc-text">强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-number">1.1.4.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">1.1.5.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%8C%BA%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">特殊区块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-number">1.2.3.</span> <span class="toc-text">图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-amp-Butterfly%E4%B8%93%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">Hexo&amp;Butterfly专用格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">2.1.</span> <span class="toc-text">Note</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.1.</span> <span class="toc-text">默认模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.2.</span> <span class="toc-text">自定义模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tag-hide"><span class="toc-number">2.2.</span> <span class="toc-text">tag-hide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#inline"><span class="toc-number">2.2.1.</span> <span class="toc-text">inline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Block"><span class="toc-number">2.2.2.</span> <span class="toc-text">Block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Toggle"><span class="toc-number">2.2.3.</span> <span class="toc-text">Toggle</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs"><span class="toc-number">2.3.</span> <span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Button"><span class="toc-number">2.4.</span> <span class="toc-text">Button</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#InlineImg"><span class="toc-number">2.5.</span> <span class="toc-text">InlineImg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Label"><span class="toc-number">2.6.</span> <span class="toc-text">Label</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Timeline"><span class="toc-number">2.7.</span> <span class="toc-text">Timeline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flink"><span class="toc-number">2.8.</span> <span class="toc-text">flink</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ichika%E3%81%AE%E5%B0%8F%E7%AA%9D%E4%B8%93%E7%94%A8%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">ichikaの小窝专用样式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91"><span class="toc-number">3.1.</span> <span class="toc-text">插入视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E9%9A%90%E8%97%8F"><span class="toc-number">3.2.</span> <span class="toc-text">文字隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5-1"><span class="toc-number">3.3.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%93%BE%E6%A0%87%E7%AD%BE"><span class="toc-number">3.4.</span> <span class="toc-text">外链标签</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div id="footer-left"><div class="footer-title"><span>ichikaの小窝|</span><span class="footer-copyright">&copy;2022 - 2024 By ichika</span></div><div class="footer-button"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/ichika99"><i class="fab fa-github"></i></a><a title="微博" target="_blank" rel="noopener" href="https://weibo.com/u/5470086332"><i class="fab fa-weibo"></i></a><a title="bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili"></i></a><a title="twitterb" target="_blank" rel="noopener" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09"><i class="fab fa-twitter"></i></a><a title="QQ" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0"><i class="iconfont icon-qq"></i></a></div><div class="wordcount"></div><span>いちか已经写了 116.5k 字，</span><span>好像写完一本 鲁迅 的 《彷徨》 了啊</span></div><div id="footer-right"><div class="footer-totop"><i class="fas fa-chevron-up" onclick="scrollToTop()"></i></div><div class="footer-info"><p>使用Hexo框架 | 基于butterfly修改</p><a title="苏公网安备 32050802011619号" target="_blank" rel="noopener" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32050802011619"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/备案图标.png" alt="备案图标" style="height: 16px;margin-right: 3px;filter: grayscale(1);"/>苏公网安备 32050802011619号</a><a title="苏ICP备2022040728号" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">苏ICP备2022040728号</a><a title="萌ICP备20223993号" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20223993">萌ICP备20223993号</a></div><div class="footer-service"><a title="腾讯云" target="_blank" rel="noopener" href="https://cloud.tencent.com"><img alt="腾讯云" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552681.png!towebp"/></a><a title="51LA" target="_blank" rel="noopener" href="https://www.51.la"><img alt="51LA" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552427.png!towebp"/></a><a title="CC BY-NC-SA 4.0" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="CC BY-NC-SA 4.0" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552856.png!towebp"/></a></div></div></div></footer></div><div id="decoration-left"> </div><div id="decoration-right"></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.ichika.cc/cdn/fancybox.umd.min.js"></script><script src="https://cdn.ichika.cc/cdn/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ichika.cc',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ichika.cc',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ichika.cc',
+        region: '',
+        pageSize: 4,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 4/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('.show-comments')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += `<div class='aside-list-item'><div class='comment-head'>`
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>
+          <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div></div>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    //let $dom = document.querySelector('#card-newest-comments .aside-list')
+    let $dom = document.querySelector('.comments-content')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('.show-comments')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><canvas class="fireworks" mobile="false" style="width:1266px; height:993px;"></canvas><script src="/js/fireworks.js"></script><script src="/js/sakura.js"></script><script src="/js/chinese-lunar.js"></script><script src="/js/console.js" data-pjax=""></script><script src="/js/custom.js" data-pjax=""></script><link rel="stylesheet" href="https://cdn.ichika.cc/cdn/APlayer_for_ichika.min.css" media="print" onload="this.media='all'"><script src="https://cdn.ichika.cc/cdn/APlayer_for_ichika.min.js"></script><script src="https://cdn.ichika.cc/cdn/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#web_bg",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})
+if(hasSetBg){
+  try {
+        pjaxSelectors.forEach(function (item, index, arr) {
+            if (item === "#web_bg") {
+                arr.splice(index, 1);
+            }
+        });
+    }catch(error){}
+}</script><script async data-pjax src="https://lib.baomitu.com/busuanzi/2.3.0/bsz.pure.mini.js"></script><!--//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js--></div></body></html>
