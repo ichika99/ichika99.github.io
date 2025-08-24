@@ -1,0 +1,677 @@
+:root {
+	--console-bg: rgba(255,255,255,0.8);
+	--console-normal:rgba(255,255,255,0.55);
+	--console-hover:rgba(255,255,255,0.9);
+}
+
+[data-theme='dark'] {
+	--console-bg: rgba(0,0,0,0.55);
+	--console-normal: rgba(0,0,0,0.2);
+	--console-hover: rgba(0,0,0,0.6);
+}
+
+[data-theme='dark'] .pimgbox,[data-theme='dark'] .imgbox{
+	filter:brightness(0.8);
+}
+
+/* 控制台 */
+#consoleButton {
+	z-index:500;
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	font-size: 23px;
+	border-radius: 50%;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	animation: settings-button-anime 15s ease infinite;
+	-webkit-animation: settings-button-anime 15s ease infinite;
+	-moz-animation: settings-button-anime 15s ease infinite;
+	background-size: 400% 400%;
+	border: 2px solid;
+	box-shadow: 0 0 10px 2px;
+	transition: 0s;
+	transition:box-shadow 0.2s,border 0.2s;
+	line-height: 55px;
+	color: var(--btn-color);
+}
+
+#consoleButton:hover{
+	box-shadow:0 0 10px 2px var(--ichika-color);
+    transition:box-shadow 0.2s,border 0.2s;
+    border:2px solid var(--ichika-color);
+}
+
+@-webkit-keyframes settings-button-anime {
+	0% {
+		background-position: 0% 50%
+	}
+
+	50% {
+		background-position: 100% 50%
+	}
+
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes settings-button-anime {
+	0% {
+		background-position: 0% 50%
+	}
+
+	50% {
+		background-position: 100% 50%
+	}
+
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes settings-button-anime {
+	0% {
+		background-position: 0% 50%
+	}
+
+	50% {
+		background-position: 100% 50%
+	}
+
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+#console {
+	display: flex;
+	flex-direction: column;
+	z-index: -100;
+	opacity: 0;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 80%;
+	max-width: 1200px;
+	height: 75%;
+	border-radius: 25px;
+	padding: 0 30px 30px 30px;
+	transition: 0.3s;
+	background: var(--console-bg);
+	user-select: none;
+}
+
+#console-blur {
+	backdrop-filter: blur(35px);
+	-webkit-backdrop-filter:blur(35px);
+	background:rgba(0,0,0,0.1);
+	z-index: -100;
+	opacity:0;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 80%;
+	max-width:1200px;
+	height: 75%;
+	border-radius: 25px;
+	transition:0.3s;
+}
+
+#console ::-webkit-scrollbar{
+	display:none;
+}
+
+#console-head{
+	height:10%;
+	margin-bottom:2%;
+	text-align:center;
+	position:relative;
+	text-overflow:ellipsis;
+}
+
+.console-title{
+	width:80%;
+	margin:10px auto;
+}
+
+#console-content{
+	height:88%;
+	transition:0.2s;
+	position:relative;
+}
+
+#console-main{
+	height:80%;
+	display:flex;
+}
+
+.console-close,#console-return{
+	border-radius:50%;
+	width:max-content;
+	position:absolute;
+	right:20px;
+	top:25px;
+	font-size:30px;
+	margin:auto 0;
+	color:var(--font-color);
+}
+
+#console-return{
+	left:20px;
+	opacity:0;
+}
+
+.console-close i,#console-return i{
+	transition:0.2s;
+}
+
+.console-close i:hover,#console-return i:hover{
+	color:var(--light-grey);
+	transition:0.2s;
+}
+
+#console-settings,#console-show{
+	width:50%;
+	height:100%;
+	transition:0.2s;
+}
+
+#console-show {
+	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+#console-settings{
+	display:flex;
+	flex-wrap:wrap;
+	height:max-content;
+}
+
+#console-settings > div{
+	background-color:var(--console-normal);
+	width:45%;
+	height:100px;
+	margin:0 2.5% 20px 2.5%;
+	border-radius:15px;
+	font-size:25px;
+	padding:10px 20px;
+	position:relative;
+	transition:0.2s;
+}
+
+#console-settings >div span{
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+#console-settings > div:hover{
+	transition:0.2s;
+	background-color:var(--console-hover);
+}
+
+#console-settings > div > i{
+	position:absolute;
+	right:20px;
+	bottom:20px;
+}
+
+#console-bottom{
+	height:20%;
+	display:flex;
+}
+
+
+#console-secmenu{
+	position:absolute;
+	height:100%;
+	width:100%;
+	opacity:0;
+	transition:0.2s;
+	z-index:-10;
+	overflow:auto;
+}
+
+.console-insecmenu{
+	overflow:hidden!important;
+}
+
+/* 主界面 */
+#he-plugin-standard {
+	width: 100% !important;
+}
+
+#show-weather, .show-comments {
+	border-radius: 15px;
+	background: var(--console-normal);
+}
+
+#show-weather{
+	padding:5px;
+}
+
+#show-weather span,#show-weather a{
+	color:var(--font-color)!important;
+}
+
+.show-comments{
+	margin-top:15px;
+	padding:10px 5px 5px 5px;
+	overflow:auto;
+}
+
+.show-comments > p{
+	font-size: 20px;
+    margin: 0 0 0 15px;
+    font-weight: bold;
+}
+
+.comments-content{
+	display:flex;
+	flex-wrap:wrap;
+}
+
+#console .comment-head{
+	display:flex;
+}
+
+#console .aside-list-item a img{
+	width:30px;
+	border-radius:50%;
+	margin-right:10px;
+}
+
+#console .aside-list-item{
+	width:calc(50% - 10px);
+	margin:5px;
+}
+
+#console .aside-list-item:hover{
+	scale:1;
+	background:var(--console-hover);
+}
+
+#console .aside-list-item .comment {
+	line-height: 20px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+	color:var(--font-color);
+}
+
+#console .aside-list-item .name{
+	color:grey;
+}
+
+@Keyframes comments-load-spin {
+   0% {
+     transform: rotate(0deg);
+   }
+ 
+   100% {
+     transform: rotate(360deg);
+   }
+}
+
+.comments-load {
+	display: inline-block;
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	border-left-color: grey;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	animation: comments-load-spin 1.2s linear infinite;
+	margin:0 auto;
+}
+
+#aplayer-music {
+	width: 65%;
+	margin:auto 0;
+}
+
+#quick-button{
+	flex:1;
+	display:flex;
+	flex-direction:row-reverse;
+}
+
+#quick-button > div{
+	width: 50px;
+    height: 50px;
+    margin: auto 5px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+    transition: 0.2s;
+    line-height: 50px;
+}
+
+#quick-button > div:hover{
+	background:var(--console-normal);
+	transition:.2s;
+}
+
+/* 切换背景页面 */
+
+.winbox {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.wb-full {
+    display: none;
+}
+
+.wb-min {
+    background-position: center;
+}
+
+[data-theme='dark'] .wb-body,
+[data-theme='dark'] #changeBgBox {
+    background: #333 !important;
+}
+
+.bgbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pimgbox,
+.imgbox,
+.box {
+    width: 166px;
+    margin: 10px;
+    background-size: cover
+}
+
+.pimgbox,
+.imgbox {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pimgbox {
+    height: 240px;
+}
+
+.imgbox {
+    height: 95px;
+}
+
+.box {
+    height: 100px;
+}
+
+.themebox{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2rem;
+	font-size: 1rem;
+	font-weight: bold;
+	background-color: var(--console-hover);
+	padding-left: 15px;
+	color:var(--font-color);
+}
+
+@media screen and (max-width: 768px) {
+    /* 背景 */
+    .pimgbox,
+    .imgbox,
+    .box {
+        height: 73px;
+        width: 135px;
+    }
+
+    .pimgbox {
+        height: 205px;
+    }
+
+    /* 2.0新增内容 */
+    .wb-min {
+        display: none;
+    }
+
+    #changeBgBox .wb-body::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#resetbg {
+    background: var(--console-bg);
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: var(--font-color);
+	transition: 0.3s;
+}
+
+#resetbg:hover{
+	background: var(--console-normal);
+	transition: 0.3s;
+}
+
+#blog-setting{
+    padding:20px;
+}
+
+/* 布局页面 */
+#layout-content{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:100%;
+}
+
+#layout-content > div{
+	height:100%;
+	width:50%;
+	padding:10px;
+}
+
+#layout-content li{
+	list-style:none;
+	font-size:22px;
+	margin-bottom:10px;
+}
+
+#layout-content li label{
+	float:right;
+}
+
+#resetLayout{
+	font-size:24px;
+	color:var(--font-color);
+}
+
+#resetLayout i{
+	float:right;
+	margin-right:5%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  bottom:-5px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.show-widget-asidehide{
+	display:none;
+}
+
+.show-widget-postcard{
+	height:300px!important;
+}
+
+.show-widget-posts{
+	width:80%!important;
+}
+
+.show-widget-posts:has(.single-row){
+	width:60%!important;
+}
+
+.single-row{
+	width:100%!important;
+}
+
+#recent-posts:has(.single-row) {
+    width: 50%;
+}
+
+/* 统计页面 */
+#data-content{
+	width:100%;
+	height:100%;
+}
+
+#data-content iframe{
+	width:100%;
+	height:370px;
+	border:none;
+}
+
+#data-51la{
+	width:50%;
+	border-radius:15px;
+	background:var(--console-normal);
+	padding:8px 15px;
+}
+
+.data-meta{
+	margin:0 30px;
+}
+
+.num-51la{
+	float:right;
+}
+
+@media screen and (max-width:768px) {
+
+	#consoleButton{
+		width:40px;
+		height: 40px;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	#console-content{
+		overflow:hidden auto;
+	}
+
+	#console-main{
+		flex-direction:column;
+		height:max-content;
+	}
+
+	#console-settings,#console-show{
+		width:100%;
+	}
+
+	#console-settings > div{
+		width:95%;
+	}
+
+	#console,#console-blur{
+		width:95%;
+		height:85%;
+		padding:0 10px 10px 10px;
+	}
+
+	#console-bottom{
+		flex-direction:column;
+		height:max-content;
+		margin-top:20px;
+	}
+
+	#aplayer-music {
+		width: 100%;
+	}
+
+	#console .aside-list-item {
+		width: calc(100% - 10px);
+	}
+
+	#layout-content > div {
+		width:100%;
+	}
+
+	#layout-content li {
+		font-size: 20px;
+	}
+
+	#layout-content > div >ul {
+		padding:0;
+	}
+
+	#layout-content li label{
+		scale:0.8;
+	}
+
+	#data-51la{
+		width:100%;
+	}
+
+	#quick-button{
+		margin-top: 30px;
+	}
+}
+
