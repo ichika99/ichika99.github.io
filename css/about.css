@@ -1,0 +1,936 @@
+:root{
+    --about-bg1:rgb(247, 247, 255);
+    --about-bg3: url(https://cdn.ichika.cc/about/bg.jpg!towebp);
+    --about-bg4: white;
+    --about-box-color: white;
+    --about-location-color: rgba(255,255,255,0.8);
+}
+
+[data-theme='dark'] {
+    --about-bg1:black;
+    --about-bg3: url(https://cdn.ichika.cc/about/bgdark.jpg!towebp);
+    --about-bg4: black;
+    --about-box-color: rgb(30,30,30);
+    --about-location-color: rgba(0,0,0,0.9);
+}
+
+[data-theme='dark'] #box-keywords,[data-theme='dark'] .wife-item,[data-theme='dark'] #box-music{
+    filter: brightness(0.8);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.layout.hide-aside{
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+
+#post-comment{
+    background: var(--about-bg4);
+    padding: 80px 10%;
+}
+
+#footer{
+    background: var(--about-bg4)!important;
+}
+
+hr{
+    display: none;
+}
+
+#aboutme{
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    top:-70px;
+    position: relative;
+}
+
+#aboutme::after {
+    content: '';
+    height: 70px;
+    background: var(--about-bg4);
+    display: block;
+    position: absolute;
+    width: 100vw;
+}
+
+#main-window{
+    height: 100vh;
+}
+
+#main-window > .swiper-wrapper > div{
+    width: 100%;
+    height: 100%;
+}
+
+.about-box{
+    width: max-content;
+    border-radius: 20px;
+    background-color: var(--about-box-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-box .box-title{
+    z-index: 100;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    padding: 0 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: white;
+}
+
+#about-first{
+    background: var(--about-bg1);
+}
+
+#about-second{
+    background: var(--about-bg1);
+    padding: calc(60px + 3%) 6% 40px 6%;
+}
+
+#about-third{
+    padding: calc(60px + 3%) 8% 40px 8%;
+    display: flex;
+    background: var(--about-bg3);
+    background-size: cover;
+}
+
+#about-forth{
+    background: var(--about-bg4);
+}
+
+/* 第一页 */
+.swiper-aboutfirst > div >div{
+    padding: 60px 10% 40px 10%;
+}
+
+.first-row1{
+    padding: 20px 70px 40px 70px;
+    display: flex;
+    height: 20%;
+}
+
+.title-left{
+    margin-top: 30px;
+}
+
+.title-left .title-1{
+    font-size: 1.4rem;
+}
+
+.title-left .title-2{
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+.title-left .title-2 span{
+    font-size: 4.6rem;
+    font-weight: bold;
+}
+
+.title-right{
+    margin-left: auto;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    color: #666;
+}
+
+.first-row2{
+    display: flex;
+    margin: 30px 20px 30px 20px;
+    height: 40%;
+}
+
+.first-row2 > div{
+    height: 100%;
+}
+
+.first-row2 .about-group{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+#box-intro{
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    min-height: 35%;
+}
+
+#box-intro > div{
+    margin: auto 0;
+    color: #666;
+    padding-left: 30px;
+}
+
+#box-intro > div > span{
+    font-size: 28px;
+    display: block;
+    font-weight: bold;
+}
+
+#box-location{
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    flex: 1;
+}
+
+#box-location img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+#box-location:hover img{
+    scale: 1.8;
+    transition: 4s;
+}
+
+.location-info{
+    padding: 5px 20px;
+    font-size: 1.7rem;
+    background: var(--about-location-color);
+    z-index: 1;
+}
+
+.location-info span{
+    font-size: 1rem;
+    color: #666;
+}
+
+#box-keywords{
+    margin-left: 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#box-keywords > div{
+    padding: 10px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    min-height: max-content;
+    align-content: flex-start;
+}
+
+#box-keywords > div > span{
+    padding: 0 10px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    height: max-content;
+}
+
+.keywords-1{
+    background: linear-gradient(to bottom,orange 86%,rgb(255, 178, 101));
+    color: orange;
+}
+
+.keywords-2{
+    background: linear-gradient(to bottom,rgb(255, 178, 101),pink 7% 93%,rgb(167,207,229));
+    color: pink;
+}
+
+.keywords-3{
+    background: linear-gradient(to bottom,rgb(167,207,229) 14%,rgb(88,222,255));
+    color: rgb(88, 222, 255);
+    flex: 1;
+}
+
+#box-persue{
+    width: 15%;
+    margin-left: 30px;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2.5rem;
+}
+
+.swiper-persue{
+    height: 60px;
+    width: 100%;
+}
+
+.swiper-persue > div > div{
+    width: 100%;
+    height: 100%;
+}
+
+.first-row3{
+    display: flex;
+    margin: 0 20px 20px 20px;
+    height: 35%;
+    max-height: 400px;
+}
+
+#box-personality{
+    width: 30%;
+    background: var(--about-box-color) url('/img/svg/INFJ-T.svg') bottom -200px right -120px no-repeat;
+    padding: 20px 30px;
+}
+
+#box-personality span{
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+#box-QA{
+    margin-left: 30px;
+    width: 70%;
+    padding: 25px 30px;
+    position: relative;
+}
+
+.QA-info{
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+}
+
+.QA-info span{
+    padding: 0 15px;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.QA-more{
+    background-color: var(--ichika-widget-hover);
+    position: absolute;
+    padding: 8px 15px;
+    border-radius: 100px;
+    top: 30px;
+    right: 40px;
+    font-size: 1.2rem;
+    color: var(--ichika-color);
+}
+
+.QA-more i{
+    margin-left: 5px;
+    animation: QA-show-more 1.2s linear infinite;
+}
+
+@keyframes QA-show-more{
+    0%{
+        transform: translateX(0);
+    }
+
+    60%{
+        transform: translateX(50%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.QA-back{
+    margin-top: 5%;
+    font-size: 2rem;
+    color: var(--font-color);
+}
+
+.QA-list{
+    padding: 20px 100px;
+    list-style: none;
+    height: 85%;
+    border-radius: 20px;
+    background: var(--about-box-color);
+    overflow: auto;
+}
+
+.QA-list li{
+    margin: 40px 0;
+}
+
+.QA-question{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.QA-answer{
+    margin: 0 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* 第二页 */
+.second-row1{
+    display: flex;
+    height: 45%;
+    margin-bottom: 30px;
+}
+
+#box-secondtitle{
+    align-self: center;
+    width: 25%;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#box-secondtitle span{
+    color: var(--ichika-color);
+}
+
+/* 音乐页 */
+#box-music{
+    color: white;
+    padding: 60px 25px 25px 25px;
+    margin-left: 30px;
+    width: 35%;
+    background: url('https://cdn.ichika.cc/about/bg.webp');
+    background-size: cover;
+}
+
+.music-type{
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    max-width: 80%;
+}
+
+.music-singer{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.music-aplayer{
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    background: rgba(255,255,255,0.2);
+    padding: 2px;
+    border-radius: 999px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 5px rgb(255 255 255 / 20%);
+    margin: 8px 0;
+}
+
+.music-aplayer .aplayer{
+    box-shadow: none;
+}
+
+.music-aplayer .aplayer .aplayer-pic{
+    width: 35px;
+    height: 35px;
+}
+
+.music-aplayer .aplayer-info{
+    display: none;
+}
+
+.music-desc{
+    margin: auto 0 auto 10px;
+}
+
+#box-comic{
+    margin-left: 30px;
+    width: 40%;
+    overflow: hidden;
+}
+
+.comic-content{
+    display: flex;
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.comic-item{
+    height: 100%;
+    color:white;
+    width: 20%;
+    transform: skew(-10deg, 0deg);
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+
+.comic-item img{
+    position: absolute;
+    top: 0;
+    left: -8vw;
+    width: 24vw;
+    height: 100%;
+    transform: skew(10deg, 0deg);
+    object-fit: cover;
+    transition: 0.8s;
+}
+
+.comic-item div{
+    transform: skew(10deg, 0deg);
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    opacity: 0;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    width: max-content;
+    max-width: 14vw;
+    background: var(--ichika-color);
+    border-radius: 999px;
+    padding: 5px 20px;
+    transition: 0.8s;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(5px);
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.comic-item a{
+    color: #555;
+}
+
+.comic-item i{
+    margin-left: 5px;
+}
+
+.comic-item:hover{
+    width: 70%;
+    transition: 0.8s;
+}
+
+.comic-item:hover div{
+    opacity: 1;
+    transition: 0.8s;
+}
+
+.comic-item:hover img{
+    transition: 0.8s;
+    left: -3vw;
+}
+
+.comic-item div:hover{
+    background: var(--ichika-color);
+    transition: 0.4s;
+}
+
+.comic-item div:hover a{
+    color:white;
+}
+
+.second-row2{
+    display: flex;
+    height: calc(55% - 30px);
+}
+
+/* 盒子：审美 */
+#box-wife{
+    width:70%;
+    height: 100%;
+}
+
+.swiper-wife{
+    height: 100%;
+    width: 100%;
+}
+
+.wife-item{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    color:white;
+}
+
+.wife-name{
+    font-size: 2.4rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+}
+
+.wife-from{
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+.wife-pag{
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 70%;
+    display: flex;
+    z-index: 99;
+}
+
+.wife-pag-item{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 15px 10px 0 0;
+    border: 2px solid var(--light-grey);
+    transition: 0.3s;
+}
+
+.wife-pag-item:hover{
+    scale: 1.2;
+    border-color: var(--ichika-color);
+    box-shadow: 0 0 5px 3px var(--ichika-color);
+}
+
+.wife-pag-item-choose{
+    scale: 1.2;
+    border-color: var(--ichika-color);
+}
+
+/* 盒子：其他爱好 */
+#box-game{
+    margin-left: 30px;
+    width: 30%;
+    height: 100%;
+    font-size: 1.6rem;
+    background-image: url('https://cdn.ichika.cc/about/dota2.jfif!towebp');
+    background-size: cover;
+    background-position: 50%;
+    color:white;
+    padding: 45px 30px 20px 30px;
+}
+
+.game-title{
+    font-weight: bold;
+    font-size: 3.4rem;
+    color: rgba(200,20,20,0.9);
+}
+
+.game-more{
+    font-weight: bold;
+    font-size: 1.8rem;
+    display: flex;
+}
+
+.game-more i{
+    font-weight: bold;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.6rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.game-rank{
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 1.1rem;
+}
+
+.game-rank img{
+    height: 2.5rem;
+    width: 2.5rem;
+    position: relative;
+    right: 8px;
+    top: 12px;
+}
+
+/* 第三页 */
+.third-text{
+    margin:auto
+}
+
+#about-third .third-text div{
+    font-weight: bold;
+    text-align: center;
+}
+
+.third-title{
+    font-size: 4rem;
+}
+
+.third-iwata{
+    font-size: 3rem;
+}
+
+/* 第四页 */
+#about-forth{
+    display: flex;
+    flex-direction: column;
+}
+
+#forth-nav{
+    width: 100%;
+    padding: 60px 15% 0 15%;
+    display: flex;
+}
+
+#forth-nav i{
+    padding: 20px 25px;
+}
+
+#forth-nav button{
+    margin: 0 auto;
+    font-size: 4rem!important;
+    transition: 0.5s;
+}
+
+#forth-nav .iconfont{
+    font-size: 4rem!important;
+}
+
+.game-nav{
+    color: var(--font-color);
+}
+
+.swiper-game{
+    flex: 1;
+    width: 100%;
+}
+
+.game-item-top{
+    height: 50%;
+}
+
+.swiper-bestgame{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-bestgame img{
+    position: absolute;
+    width: 60%;
+    height: calc(100% - 60px);
+    border-radius: 20px;
+    top: 0;
+    left: 20%;
+    object-fit: cover;
+    margin: 20px 0 40px 0;
+}
+
+.bestlike-name{
+    position: absolute;
+    right: 25%;
+    bottom: 60px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 10px black;
+}
+
+.game-item-bottom{
+    height: 50%;
+    display: flex;
+    padding: 20px 6%;
+    background: var(--about-bg4);
+}
+
+.game-item-bottom > div{
+    width: 33.3%;
+}
+
+.game-info{
+    display: flex;
+    flex-direction: column;
+    margin: auto
+}
+
+.game-userinfo{
+    display: flex;
+    margin: 20px auto 40px auto;
+}
+
+.game-userinfo > img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.game-userinfo span{
+    display: block;
+    font-size: 1.2rem;
+}
+
+.game-userinfo span img{
+    height: 1.6rem;
+    box-shadow: 0 0 1px;
+    margin-right: 10px;
+}
+
+.game-userinfo span:first-child{
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.data-content{
+    margin: 5px auto;
+    width: 60%;
+    max-width: 250px;
+}
+
+.data-content span:first-child{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.data-content span:not(:first-child){
+    font-size: 1.2rem;
+    float: right;
+}
+
+.game-longtime{
+    margin: auto;
+}
+
+.game-longtime > span{
+    margin: 0 10% 20px 10%;
+    width: 80%;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.longtime-game{
+    width: 80%;
+    height: 80px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.longtime-game img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+.longtime-game-name{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 100%;
+    width: max-content;
+    background: linear-gradient(to left,rgba(240,240,240,0.8) 40%,transparent);
+    right: 0;
+    transform: translateX(120%);
+    line-height: 500%;
+    padding: 0 15px 0 50px;
+    transition: 0.5s;
+    border-radius: 0 20px 20px 0;
+}
+
+.longtime-game:hover .longtime-game-name{
+    transition: 0.5s;
+    transform: translateX(0);
+}
+
+.game-device{
+    margin: auto;
+}
+
+.game-device img{
+    height: 200px;
+    width: 300px;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+}
+
+.game-device ul{
+    margin: 30px 10% 0 10%;
+}
+
+.game-device li{
+    font-size: 1.2rem;
+}
+
+.game-others{
+    background: var(--about-bg4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info{
+    display: flex;
+    font-size: 1.2rem;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.contact-info div{
+    margin-left: 15px;
+}
+
+.game-others-item{
+    margin:0 30px;
+    width: 40px;
+    transition: 0.3s;
+}
+
+.contact-info img{
+    height: 40px;
+    width: 40px;
+}
+
+.contact-id{
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 auto;
+}
+
+.game-others-item:hover{
+    transition: 0.3s;
+    width: 140px;
+    border-bottom: 2px solid var(--ichika-color);
+}
+
+.contact-info div,.contact-id{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.game-others-item:hover .contact-info div,.game-others-item:hover .contact-id{
+    width: max-content;
+    transition: 0.3s;
+}

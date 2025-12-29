@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ichikaの小窝</title>
+  <icon>http://ichika.cc/icon.png</icon>
+  <subtitle>被发现了嗼</subtitle>
+  <link href="http://ichika.cc/atom.xml" rel="self"/>
+  
+  <link href="http://ichika.cc/"/>
+  <updated>2025-12-29T03:00:00.000Z</updated>
+  <id>http://ichika.cc/</id>
+  
+  <author>
+    <name>ichika</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PJSK COLORFUL LIVE 5th</title>
+    <link href="http://ichika.cc/Article/life_PJSK5thLive/"/>
+    <id>http://ichika.cc/Article/life_PJSK5thLive/</id>
+    <published>2025-12-29T03:00:00.000Z</published>
+    <updated>2025-12-29T03:00:00.000Z</updated>
+    
+    
+    <summary type="html">又一年</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>烤5th感谢祭&amp;马6秋&amp;初音联动房&amp;秒五真人版</title>
+    <link href="http://ichika.cc/Article/life_PJSKandUMA/"/>
+    <id>http://ichika.cc/Article/life_PJSKandUMA/</id>
+    <published>2025-11-02T16:00:00.000Z</published>
+    <updated>2025-11-02T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">经典特种兵之拼好live</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anisama与魔法未来2025</title>
+    <link href="http://ichika.cc/Article/life_ASLandMM2025/"/>
+    <id>http://ichika.cc/Article/life_ASLandMM2025/</id>
+    <published>2025-09-09T02:00:00.000Z</published>
+    <updated>2025-09-09T02:00:00.000Z</updated>
+    
+    
+    <summary type="html">太爽了，已经起戒断反应了。</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nintendo Switch 2：恰到好处的升级</title>
+    <link href="http://ichika.cc/Article/game_NintendoSwitch2/"/>
+    <id>http://ichika.cc/Article/game_NintendoSwitch2/</id>
+    <published>2025-08-24T10:00:00.000Z</published>
+    <updated>2025-08-24T10:00:00.000Z</updated>
+    
+    
+    <summary type="html">玩了两个多月，说说感受吧</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="NS" scheme="http://ichika.cc/tags/NS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>去看了千与千寻舞台剧，超级推荐</title>
+    <link href="http://ichika.cc/Article/life_SpritedAway/"/>
+    <id>http://ichika.cc/Article/life_SpritedAway/</id>
+    <published>2025-07-23T08:00:00.000Z</published>
+    <updated>2025-07-23T08:00:00.000Z</updated>
+    
+    
+    <summary type="html">好久没发文了，水一篇</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拓竹H2D小测评</title>
+    <link href="http://ichika.cc/Article/tech_BambuH2D/"/>
+    <id>http://ichika.cc/Article/tech_BambuH2D/</id>
+    <published>2025-06-11T11:05:00.000Z</published>
+    <updated>2025-06-11T11:05:00.000Z</updated>
+    
+    
+    <summary type="html">拓竹旗舰新品H2D，我的第一台3D打印机</summary>
+    
+    
+    
+    <category term="科技" scheme="http://ichika.cc/categories/%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="🖱️硬件" scheme="http://ichika.cc/tags/%F0%9F%96%B1%EF%B8%8F%E7%A1%AC%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《光与影：33号远征队》</title>
+    <link href="http://ichika.cc/Article/game_Expedition33/"/>
+    <id>http://ichika.cc/Article/game_Expedition33/</id>
+    <published>2025-06-09T14:10:00.000Z</published>
+    <updated>2025-06-09T14:10:00.000Z</updated>
+    
+    
+    <summary type="html">今年的GOTY提名一定会有这款游戏的</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+    <category term="Xbox" scheme="http://ichika.cc/tags/Xbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《浪漫沙加2：七英雄的复仇》不浪漫，但好玩</title>
+    <link href="http://ichika.cc/Article/game_RomancingSaga2/"/>
+    <id>http://ichika.cc/Article/game_RomancingSaga2/</id>
+    <published>2025-05-12T10:10:00.000Z</published>
+    <updated>2025-05-12T10:10:00.000Z</updated>
+    
+    
+    <summary type="html">很传统的日式JRPG，经典又不失趣味，纯粹的回合制乐趣。</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="Steam" scheme="http://ichika.cc/tags/Steam/"/>
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>そして、次の曲が始まるのです！——吹响吧上低音号10th Anniversary</title>
+    <link href="http://ichika.cc/Article/life_eupho10th/"/>
+    <id>http://ichika.cc/Article/life_eupho10th/</id>
+    <published>2025-03-18T14:00:00.000Z</published>
+    <updated>2025-03-18T14:00:00.000Z</updated>
+    
+    
+    <summary type="html">特种兵远征参加了京吹十周年庆典活动，久美子一年生、二年生场</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>任天堂博物馆参观与购票指北</title>
+    <link href="http://ichika.cc/Article/life_NintendoMuseum/"/>
+    <id>http://ichika.cc/Article/life_NintendoMuseum/</id>
+    <published>2025-03-18T08:00:00.000Z</published>
+    <updated>2025-03-18T08:00:00.000Z</updated>
+    
+    
+    <summary type="html">随便水的一篇游记</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《终焉之马格诺利亚》 优雅的恶魔城续作</title>
+    <link href="http://ichika.cc/Article/game_EnderMagnolia/"/>
+    <id>http://ichika.cc/Article/game_EnderMagnolia/</id>
+    <published>2025-02-27T11:50:00.000Z</published>
+    <updated>2025-02-27T11:50:00.000Z</updated>
+    
+    
+    <summary type="html">近年来为数不多的优秀恶魔城作品，小众佳作</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>看了PJSK 4th live与初音未来大电影</title>
+    <link href="http://ichika.cc/Article/life_PJSK4thLiveAndMovie/"/>
+    <id>http://ichika.cc/Article/life_PJSK4thLiveAndMovie/</id>
+    <published>2025-02-02T14:30:00.000Z</published>
+    <updated>2025-02-02T14:30:00.000Z</updated>
+    
+    
+    <summary type="html">Wonderhoy!</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KGA2024&amp;大概是年终总结</title>
+    <link href="http://ichika.cc/Article/game_KGA2024/"/>
+    <id>http://ichika.cc/Article/game_KGA2024/</id>
+    <published>2025-02-02T09:12:58.000Z</published>
+    <updated>2025-02-02T09:12:58.000Z</updated>
+    
+    
+    <summary type="html">啦啦啦啦啦</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《逆向坍塌：面包房行动》这不比少前好玩？</title>
+    <link href="http://ichika.cc/Article/game_ReverseCollapse/"/>
+    <id>http://ichika.cc/Article/game_ReverseCollapse/</id>
+    <published>2025-01-16T10:10:00.000Z</published>
+    <updated>2025-01-16T10:10:00.000Z</updated>
+    
+    
+    <summary type="html">非常成熟的国产走格子战棋，相对保守的设计策略和量大管饱的内容制作出的非常有趣的游戏</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="Steam" scheme="http://ichika.cc/tags/Steam/"/>
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2025游戏记录</title>
+    <link href="http://ichika.cc/Article/game_GameRecord2025/"/>
+    <id>http://ichika.cc/Article/game_GameRecord2025/</id>
+    <published>2024-12-31T16:00:00.000Z</published>
+    <updated>2024-12-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">2025年游戏记录</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="🎮游戏记录" scheme="http://ichika.cc/tags/%F0%9F%8E%AE%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《学园偶像大师》 站在赛马娘的肩膀上</title>
+    <link href="http://ichika.cc/Article/game_GakuenImas/"/>
+    <id>http://ichika.cc/Article/game_GakuenImas/</id>
+    <published>2024-12-04T11:50:00.000Z</published>
+    <updated>2024-12-04T11:50:00.000Z</updated>
+    
+    
+    <summary type="html">不玩《学园偶像大师》的人有难了！</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>异形工厂2&amp;幸福工厂：自动化流水线的魅力</title>
+    <link href="http://ichika.cc/Article/game_Shapez2&amp;Satisfactory/"/>
+    <id>http://ichika.cc/Article/game_Shapez2&amp;Satisfactory/</id>
+    <published>2024-11-22T04:10:00.000Z</published>
+    <updated>2024-11-22T04:10:00.000Z</updated>
+    
+    
+    <summary type="html">真肝啊</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="Steam" scheme="http://ichika.cc/tags/Steam/"/>
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国庆去了cp30</title>
+    <link href="http://ichika.cc/Article/life_cp30/"/>
+    <id>http://ichika.cc/Article/life_cp30/</id>
+    <published>2024-10-12T08:00:00.000Z</published>
+    <updated>2024-10-12T08:00:00.000Z</updated>
+    
+    
+    <summary type="html">国庆cp30去杭州玩了三天</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《黑神话：悟空》 国产佳作</title>
+    <link href="http://ichika.cc/Article/game_BlackMyth/"/>
+    <id>http://ichika.cc/Article/game_BlackMyth/</id>
+    <published>2024-10-08T06:10:00.000Z</published>
+    <updated>2024-10-08T06:10:00.000Z</updated>
+    
+    
+    <summary type="html">咕咕咕咕咕咕咕咕</summary>
+    
+    
+    
+    <category term="游戏" scheme="http://ichika.cc/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="Steam" scheme="http://ichika.cc/tags/Steam/"/>
+    
+    <category term="KGA" scheme="http://ichika.cc/tags/KGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>去日本玩儿了</title>
+    <link href="http://ichika.cc/Article/life_TripToJapan/"/>
+    <id>http://ichika.cc/Article/life_TripToJapan/</id>
+    <published>2024-07-31T08:30:00.000Z</published>
+    <updated>2024-07-31T08:30:00.000Z</updated>
+    
+    
+    <summary type="html">意犹未尽</summary>
+    
+    
+    
+    <category term="生活" scheme="http://ichika.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="🌏旅行" scheme="http://ichika.cc/tags/%F0%9F%8C%8F%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,425 @@
+<!DOCTYPE html><!--                                                ._      _     _ _                              
+(_)    | |   (_) |          _                  
+ _  ___| |__  _| | ____ _  (_)                 
+| |/ __| '_ \| | |/ / _` |                     
+| | (__| | | | |   < (_| |  _                  
+|_|\___|_| |_|_|_|\_\__,_| (_)               _ 
+\ \        / / | |                          | |
+ \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |
+  \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | |
+   \  /\  /  __/ | (_| (_) | | | | | |  __/ |_|
+    \/  \/ \___|_|\___\___/|_| |_| |_|\___| (_)
+                                               --><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制 | ichikaの小窝</title><meta name="keywords" content="🖱️硬件"><meta name="author" content="ichika"><meta name="copyright" content="ichika"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="折腾了半天远程办公的方案，用WOL和Rustdesk实现自由开关机与流畅控制，不是很难，但是小坑很多。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制">
+<meta property="og:url" content="http://ichika.cc/Article/tech_WOLandRustdesk/index.html">
+<meta property="og:site_name" content="ichikaの小窝">
+<meta property="og:description" content="折腾了半天远程办公的方案，用WOL和Rustdesk实现自由开关机与流畅控制，不是很难，但是小坑很多。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.ichika.cc/typora/202210141549031.png!cover">
+<meta property="article:published_time" content="2022-12-13T14:42:49.000Z">
+<meta property="article:modified_time" content="2022-12-13T14:42:49.000Z">
+<meta property="article:author" content="ichika">
+<meta property="article:tag" content="🖱️硬件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.ichika.cc/typora/202210141549031.png!cover"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://ichika.cc/Article/tech_WOLandRustdesk/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.ichika.cc/cdn/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":250},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ichika","link":"链接: ","source":"来源: ichikaの小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-13 22:42:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/console.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3652097_dp26616p5x6.css"><script src="/js/vue@2.6.14.min.js"></script><script src="/js/element-ui@2.15.6/lib/index.js"></script><link rel="stylesheet" href="/js/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script><script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script> LA.init({id:"JqAEr98WCPCHb0eq",ck:"JqAEr98WCPCHb0eq"})</script><script>new LingQue.Monitor().init({id:"JqAGJs9NzTO9yoVw",sendSuspicious:true});</script><script src="/js/talks.js"></script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="ichikaの小窝" type="application/atom+xml">
+</head><body><div id="web_bg" style="background:url(https://cdn.ichika.cc/typora/202210141549031.png);background-attachment: local;background-position: center;background-size: cover;background-repeat: no-repeat;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/HeadIcon.jpg" onerror="onerror=null;src='/img/Page/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5470086332" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://github.com/ichika99" target="_blank" title="Github"><i class="fab fa-github"></i></a></div><div id="sidebar-welcome-info"><div class="loading-container"></div></div><div class="menus_items page-name-visible"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 全部</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-handshake"></i><span> 互动</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Article/other_FirstArticle/"><i class="fa-fw fas fa-meteor"></i><span> 须知</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/talks/"><i class="fa-fw fas fa-bomb"></i><span> 动态</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 友人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-users"></i><span> 朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-circle-info"></i><span> 关于</span></a></li><li><a class="site-page child" href="/Article/other_UpdateLog/"><i class="fa-fw fas fa-file"></i><span> 更新日志</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://nav.ichika.cc"><i class="fa-fw fas fa-globe"></i><span> 导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://pan.ichika.cc"><i class="fa-fw fas fa-cloud"></i><span> 分享</span></a></li></ul></div></div><div class="menus_items left_item"><div class="menus_item"><a class="site-page group undefined" title="站点导航" href="javascript:void(0);"><i class="fa-fw fas fa-grip-vertical" style="transform:none;font-size:1.4rem"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.ichika.cc" title="主页"><img alt="个人主页" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.jpg"/>主页</a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.ichika.cc" title="GitHub"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/github.png"/>GitHub线路</a></li><li><a class="site-page child" href="https://ichika.cc" title="腾讯云"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/tecentCloud.png"/>腾讯云线路</a></li></ul></div></div></div></div><div id="console-blur"></div><div id="console"><div id="console-head"><h1 class="console-title">小窝控制中心</h1><div id="console-return"><i class="fas fa-chevron-left" onclick="backToMenu()"></i></div><div class="console-close"><i class="fas fa-xmark" onclick="showConsole()"></i></div></div><div id="console-content"><div id="console-secmenu"></div><div id="console-main"><div id="console-settings"><div id="settings-bg" onclick="showBgSetting()"><span>背景</span><i class="far fa-image"></i></div><div id="settings-layout" onclick="showLayoutSetting()"><span>设置</span><i class="fas fa-layer-group"></i></div><div id="settings-data" onclick="showData()"><span>统计</span><i class="fas fa-chart-pie"></i></div></div><div id="console-show"><div id="show-weather"><div id="he-plugin-standard"><div class="comments-load"></div></div><!--script.
+  WIDGET = {
+    "CONFIG": {
+      "layout": "1",
+      "width": 500,
+      "height": 180,
+      "background": "5",
+      "dataColor": "4C4948",
+      "aqiColor": "4C4948",
+      "borderRadius": 10,
+      "key": "212c5f68de69458381b2686ac2cf21fc"
+    }
+  }
+script(src='https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0' defer)--></div><div class="show-comments"><p>最新评论</p><div class="comments-content"><div class="comments-load"></div></div></div></div></div><div id="console-bottom"><div id="aplayer-music"><div class="aplayer no-destroy" data-listFolded="true" data-fixed="true" data-id="7646736059" preload="none" data-server="tencent" data-type="playlist" data-volume="0.3" data-order="random"></div></div><div id="quick-button"><div id="quick-fullscreen" onclick="fullScreen()" title="全屏模式"><i class="fas fa-expand"></i></div><div id="quick-darkmode" onclick="darkMode()" title="夜间模式"><i class="fas fa-moon"></i></div><div id="quick-readmode" onclick="readMode()" title="阅读模式"><i class="fas fa-book-open"></i></div></div></div></div></div><button type="button" id="consoleButton" title="控制中心" onclick="showConsole()" style="right:50px;bottom:60px;"><i class="fas fa-screwdriver-wrench"></i></button><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div class="menus_items left_item"><div class="menus_item"><a class="site-page group undefined" title="站点导航" href="javascript:void(0);"><i class="fa-fw fas fa-grip-vertical" style="transform:none;font-size:1.4rem"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.ichika.cc" title="主页"><img alt="个人主页" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.jpg"/>主页</a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.ichika.cc" title="GitHub"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/github.png"/>GitHub线路</a></li><li><a class="site-page child" href="https://ichika.cc" title="腾讯云"><img alt="GitHub" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Article/Link/tecentCloud.png"/>腾讯云线路</a></li></ul></div></div><span id="blog_name"><a id="site-name" href="/">ichikaの小窝</a></span><div id="menus"></div><div class="menus_items page-name-visible"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 全部</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-handshake"></i><span> 互动</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Article/other_FirstArticle/"><i class="fa-fw fas fa-meteor"></i><span> 须知</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-message"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/talks/"><i class="fa-fw fas fa-bomb"></i><span> 动态</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 友人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-users"></i><span> 朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-address-card"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-circle-info"></i><span> 关于</span></a></li><li><a class="site-page child" href="/Article/other_UpdateLog/"><i class="fa-fw fas fa-file"></i><span> 更新日志</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://nav.ichika.cc"><i class="fa-fw fas fa-globe"></i><span> 导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://pan.ichika.cc"><i class="fa-fw fas fa-cloud"></i><span> 分享</span></a></li></ul></div></div><div class="page-name-invisible" id="page-name" onclick="scrollToTop()"><a id="page-title"></a></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" title="搜索" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="travellings-button"><a class="site-page social-icon search" title="开往" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fas fa-subway fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-13T14:42:49.000Z" title="发表于 2022-12-13 22:42:49">2022-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-13T14:42:49.000Z" title="更新于 2022-12-13 22:42:49">2022-12-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80/">科技</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/Article/tech_WOLandRustdesk/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>自己电脑资料比较多，各种软件常年不关，便想找个比较理想的远程方案随时随地控制电脑，折腾了半天也算研究的差不多了。主要解决两个问题，如何远程开机，以及如何流畅地远程连接。</p>
+<p>我最终选择了自带WOL功能的路由器实现开机&#x2F;唤醒，用Rustdesk自建服务器的方式远程连接，实测下来效果还是不错的。</p>
+<p>因为涉及到很多设备、软件的选择，每个人的配置和方案都不同，因此并不是精简具体的教程，大概讲一下思路与关键设置，比较杂，各人要按需配置。</p>
+<h1 id="远程开机"><a href="#远程开机" class="headerlink" title="远程开机"></a>远程开机</h1><p>远程控制第一步，先把电脑给开了再说。目前主流方案是利用WOL（网络唤醒，Wake On LAN）功能来启动电脑，原理是现代电脑睡眠&#x2F;休眠&#x2F;关机状态下主板仍可以对部分硬件（网卡）保持供电，对于支持WOL的网卡与主板可以通过向网卡发送相应的数据包来唤醒电脑。</p>
+<p>这一步你需要设置路由器、BIOS、以及操作系统，你需要有一台带arp绑定&#x2F;DDNS&#x2F;端口转发的路由器以及公网ip，或者直接带有WOL功能的路由器。还需要支持网络唤醒功能的电脑（基本不是老古董都支持）。</p>
+<p>我的配置：windows11专业版，华硕B660-A WIFI D4主板，Intel I225-V网卡有线连接华硕RT-AX57路由器，官方固件，动态公网IP路由器拨号，使用华硕路由器app自带的WOL功能唤醒。</p>
+<h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>进入BIOS设置，找到启用网络唤醒（也有可能叫WOL、Wake On LAN或者通过PCIE设备唤醒以及类似的名字，通常在电源管理里找），选择打开，大多数主板这个功能应该是默认开启的，如果你的主板有省电模式，如果你打开它可能会关闭网络唤醒功能，注意检查。另外，如果你的主板支持来电后恢复或者开机也可以打开，以避免意外断电恢复后主板不给网卡送电。</p>
+<h2 id="操作系统（windows）"><a href="#操作系统（windows）" class="headerlink" title="操作系统（windows）"></a>操作系统（windows）</h2><p>以win11为例，在设备管理器 -&gt; 网络适配器 -&gt; 你正在使用的有线网卡 -&gt; 属性 -&gt;  电源管理，把三个选项全部勾上。如果没有这个界面请尝试更新网卡驱动。少数网卡可能需要在高级页面调整设置，一般保持默认就可以了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212141736722.png!towebp" alt="网卡电源管理"></p>
+<p>如果你的系统是windows10及以上，在控制面板 -&gt; 电源选项 -&gt;选择电源按钮的功能，取消“启用快速启动”，如果无法更改，请点击“更改当前不可用的设置”。这是由于win10以上的关机默认使机器进入S4状态禁用WOL，windows只允许从S3以及处于休眠状态的S4唤醒。关闭该选项后系统关机进入S5状态，此时远程开机的功能是交由主板和网卡负责的。当然这一部分也跟硬件有关，详细了解可以直接去<a class="ickA" target="_blank" rel="noopener" href='https://learn.microsoft.com/zh-cn/troubleshoot/windows-client/deployment/wake-on-lan-feature'>Microsoft Learn</a>了解。不过这玩意不管他直接关了也行，系统装在固态的话快速启动基本也快不了多少。</p>
+<p>最后记一下ip和MAC地址，在设置 -&gt; 网络和Internet -&gt; 属性里面，ipv4地址和物理地址就是。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212141818391.png!towebp" alt="网络地址"></p>
+<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><p>路由器的配置是最麻烦的，想通过外网访问就得先过路由器这一关，而每个人的路由器品牌、固件、上网方式都不一样，因此解决方法各异。但在此之前，可以先试一下内网开机&#x2F;唤醒，确保之前的配置是正确的。</p>
+<p>准备同一个网络环境下的手机或计算机，商店或者浏览器搜索WOL，随便下个软件就可以。填入需要唤醒的设备ip和mac地址，在IP&#x2F;host&#x2F;广播地址栏填写设备IP，最后一部分换成255，端口填9，不出意外的话应该就可以内网唤醒了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212141851058.jpg!towebp" alt="内网开机"></p>
+<p>如果唤醒成功的话，接下来就要尝试外网唤醒了。</p>
+<p>如果你的路由器本身就支持网络唤醒，那么恭喜你，只需要在路由器里设置一下就好了。我用的是华硕RT-AX57官方固件，在路由器面板 -&gt; 网络工具 -&gt; 通过网络唤醒，将需要唤醒的设备添加即可，然后你就可以随时通过华硕路由器app唤醒设备了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212141859112.png!towebp" alt="华硕路由器设置"></p>
+<p>如果你的路由器不支持网络唤醒功能，那就得用比较传统的方法设置了，我一开始就打算用这种方法，配置了一堆，最后发现路由器不支持arp绑定，就重新买了个华硕路由器，结果发现之前折腾了半天没搞成结果华硕一步就好了，真香。</p>
+<p>首先你需要你的路由器支持arp绑定功能，只有部分中高端路由器有这个功能，并且有些品牌可能要刷开发版固件或开启ssh后才可使用，务必提前了解。动手能力比较强的也可以刷第三方固件。我使用的方案是ddns+端口转发，因此需要去要一个公网ip，给打个电话即可，不同地区与运营商政策不同，有些地区公网ip有低消要求或者直接不给，苏州电信是直接给的。有公网ip后，联系装宽带的上门&#x2F;向他要光猫超密，将光猫改成桥接模式，然后使用路由器拨号上网。</p>
+<p>物理条件准备完成后，接下来使用路由器的静态DHCP，将你电脑的内网ip与MAC地址绑定，这样你的电脑以后上网都会默认使用这个ip。接下来开启路由器的端口转发功能，端口都选9，本地ip输入电脑的ip地址。完成这一步后就已经可以通过外网唤醒电脑了，但是普通用户的公网ip是动态的，一般每隔2-3天或重启路由器都会换一次，唤醒经常需要重输ip很麻烦，使用路由器的DDNS功能可以将路由器和相应服务商提供的域名绑定，这样可以直接通过固定的域名找到路由器，具体操作流程参考DDNS服务商与路由器厂商说明。外网唤醒需要在IP&#x2F;host&#x2F;广播地址栏填写你的域名或IP地址，mac填写电脑的mac，端口填9。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212141934422.jpg!towebp" alt="外网开机"></p>
+<p>其实到这里我们就已经可以用固定的设置外网开机了，但是在电脑关机一段时间后便会失效，这是由于下线后路由器内储存的电脑的mac地址信息丢失造成的，外网传来的数据包路由器不知道该转发到哪，这里就需要arp绑定让路由器记住你电脑的ip和mac地址关系。具体绑定方法因路由器品牌型号而异。</p>
+<h1 id="远程控制"><a href="#远程控制" class="headerlink" title="远程控制"></a>远程控制</h1><p>目前主流的控制软件包括向日葵、todesk、teamviewer、系统自带等，个人使用的是Rustdesk自建服务器，使用了一段时间，个人感觉还不错。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>参考<a class="ickA" target="_blank" rel="noopener" href='https://rustdesk.com/docs/zh-cn/self-host/install/'>官方文档</a>，支持linux、windows和docker部署，个人使用CentOS7+宝塔面板。<a class="ickA" target="_blank" rel="noopener" href='https://github.com/rustdesk/rustdesk-server/releases'>下载</a>相应的包，放行21115(tcp), 21116(tcp&#x2F;udp), 21118(tcp), 21117(tcp), 21119(tcp)，在宝塔软件商店里下载一个进程守护管理，添加两个守护进程，分别运行 <code>Rustdesk根目录/hbbs</code>、<code>Rustdesk根目录/hbbr</code>，如果正常启动的话就没问题了。首次启动后Rustdesk根目录会生成一个id_ed25519.pub文件，里面的内容就是key，记下key和你的服务器ip。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212142012215.png!towebp" alt="守护进程"></p>
+<p>使用时，<strong>被控端请务必将Rustdesk安装在电脑上，而不要使用免安装版本，否则在部分界面会出现无法操控的情况（比如你没有办法输入密码开机！）</strong>安装完成后请将rustdesk.exe文件改名为“rustdeskhost&#x3D;&lt;服务器ip&gt;,key&#x3D;<key>“，打开后在设置中修改ID&#x2F;中继服务器中ID服务器为服务器IP。正常情况下主界面下方应显示就绪，关于界面中显示key与host。在其他控制端设备上填入相应的ID&#x2F;中继服务器，ID与密码即可开始远程控制。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212142022018.png!towebp" alt="被控端设置"></p>
+<p>配合远程开机，可以将rustdesk设成开机启动。按win+r，输入shell:startup，回车，把rustdesk创建个快捷方式扔进去就可以了。</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>被控端：苏州电信500m，公网ip，有线连接，1080p</p>
+<p>控制端：苏州电信100m，有线连接</p>
+<p>服务器：上海</p>
+<p>使用了大半个月，非常流畅，没有遇到过明显卡顿，画面延迟70ms左右，只有很轻微的操作迟钝感的。静态窗口与快速切换分辨率都接近原生（1080p），连续动画会局部降分辨率，静态部分的画面是不刷新的，所以还是维持较高分辨率。整体感觉优点在于画面流畅操作舒服，画面清晰度在大多数情况下都可以接受，可以轻度游戏，翻动网页、文档的时候阅读可能稍有些费眼睛。4K画面体验不佳，pc端似乎优化有问题，延迟极高无法使用，手机端有明显延迟且轻微卡顿，不建议使用，如果两边带宽都够高的话可以试试。</p>
+<p><strong>延迟，静态窗口，看视频。</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212142347253.png!towebp" alt="延迟"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212142347141.png!towebp" alt="静止窗口"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212142347205.png!towebp" alt="看视频"></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>个人远程控制解决方案：WOL网络唤醒+Rustdesk远程控制</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://ichika.cc/Article/tech_WOLandRustdesk/">http://ichika.cc/Article/tech_WOLandRustdesk/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>ichika</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2022-12-13</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-12-13</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%F0%9F%96%B1%EF%B8%8F%E7%A1%AC%E4%BB%B6/">🖱️硬件</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.ichika.cc/typora/202210141549031.png!cover" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/Page/WechatPay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/WechatPay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/Page/AliPay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/AliPay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Article/game_KGA2022/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202212230010657.jpg!cover" onerror="onerror=null;src='/img/Page/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">KGA2022</div></div></a></div><div class="next-post pull-right"><a href="/Article/game_TGA2022/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071853055.png!cover" onerror="onerror=null;src='/img/Page/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">锐评TGA2022</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Article/tech_BambuH2D/" title="拓竹H2D小测评"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202506111702550.jpeg!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-11</div><div class="title">拓竹H2D小测评</div></div></a></div><div><a href="/Article/tech_MetaQuest3/" title="Meta Quest3:优秀的升级品"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202312041954049.jpeg!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-04</div><div class="title">Meta Quest3:优秀的升级品</div></div></a></div><div><a href="/Article/tech_SetupComputer/" title="装个机 吧"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211151412934.jpg!cover" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-15</div><div class="title">装个机 吧</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><img class="card-info-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/page/IconBig.jpg!cover"/><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/HeadIcon.jpg" onerror="this.onerror=null;this.src='/img/Page/friend_404.gif'" alt="avatar"/></div><div class="author-info-me"><div class="author-info__name">ichika</div><div class="author-info__description">Hello,gamer!</div></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" href="/Article/other_AboutMe/"><span>了解更多</span><i class="fas fa-arrow-circle-right"></i></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5470086332" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://github.com/ichika99" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div id="welcome-info"><div class="loading-container"></div></div><div class="item-headline"><span>ichikaの留言：</span></div><div class="announcement_content">欢迎光临！如有使用问题请联系我，谢谢。</div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/life_PJSK5thLive/&quot;)"><a class="thumbnail" href="/Article/life_PJSK5thLive/" title="PJSK COLORFUL LIVE 5th"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/20251226195209758.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="PJSK COLORFUL LIVE 5th"/></a><div class="content"><a class="title" href="/Article/life_PJSK5thLive/" title="PJSK COLORFUL LIVE 5th">PJSK COLORFUL LIVE 5th</a><time datetime="2025-12-29T03:00:00.000Z" title="发表于 2025-12-29 11:00:00">2025-12-29</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/life_PJSKandUMA/&quot;)"><a class="thumbnail" href="/Article/life_PJSKandUMA/" title="烤5th感谢祭&amp;马6秋&amp;初音联动房&amp;秒五真人版"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202511022353665.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="烤5th感谢祭&amp;马6秋&amp;初音联动房&amp;秒五真人版"/></a><div class="content"><a class="title" href="/Article/life_PJSKandUMA/" title="烤5th感谢祭&amp;马6秋&amp;初音联动房&amp;秒五真人版">烤5th感谢祭&amp;马6秋&amp;初音联动房&amp;秒五真人版</a><time datetime="2025-11-02T16:00:00.000Z" title="发表于 2025-11-03 00:00:00">2025-11-03</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/life_ASLandMM2025/&quot;)"><a class="thumbnail" href="/Article/life_ASLandMM2025/" title="Anisama与魔法未来2025"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202509072244800.JPG!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="Anisama与魔法未来2025"/></a><div class="content"><a class="title" href="/Article/life_ASLandMM2025/" title="Anisama与魔法未来2025">Anisama与魔法未来2025</a><time datetime="2025-09-09T02:00:00.000Z" title="发表于 2025-09-09 10:00:00">2025-09-09</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/game_NintendoSwitch2/&quot;)"><a class="thumbnail" href="/Article/game_NintendoSwitch2/" title="Nintendo Switch 2：恰到好处的升级"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202508221710377.jpeg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="Nintendo Switch 2：恰到好处的升级"/></a><div class="content"><a class="title" href="/Article/game_NintendoSwitch2/" title="Nintendo Switch 2：恰到好处的升级">Nintendo Switch 2：恰到好处的升级</a><time datetime="2025-08-24T10:00:00.000Z" title="发表于 2025-08-24 18:00:00">2025-08-24</time></div></div><div class="aside-list-item" onclick="pjax.loadUrl(&quot;/Article/life_SpritedAway/&quot;)"><a class="thumbnail" href="/Article/life_SpritedAway/" title="去看了千与千寻舞台剧，超级推荐"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202507231531597.jpg!cover_mini" onerror="this.onerror=null;this.src='/img/Page/404.jpg'" alt="去看了千与千寻舞台剧，超级推荐"/></a><div class="content"><a class="title" href="/Article/life_SpritedAway/" title="去看了千与千寻舞台剧，超级推荐">去看了千与千寻舞台剧，超级推荐</a><time datetime="2025-07-23T08:00:00.000Z" title="发表于 2025-07-23 16:00:00">2025-07-23</time></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%BC%80%E6%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">远程开机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BIOS"><span class="toc-number">2.1.</span> <span class="toc-text">BIOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88windows%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">操作系统（windows）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">路由器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">远程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-number">3.2.</span> <span class="toc-text">效果</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div id="footer-left"><div class="footer-title"><span>ichikaの小窝|</span><span class="footer-copyright">&copy;2022 - 2025 By ichika</span></div><div class="footer-button"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/ichika99"><i class="fab fa-github"></i></a><a title="微博" target="_blank" rel="noopener" href="https://weibo.com/u/5470086332"><i class="fab fa-weibo"></i></a><a title="bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/18247019?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili"></i></a><a title="twitterb" target="_blank" rel="noopener" href="https://twitter.com/Receiver99xkk?t=UoMBRIY0a-csS_gUb9aIRg&amp;s=09"><i class="fab fa-twitter"></i></a><a title="QQ" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=xb453AHuxlK_XjrxV0A5rkz2x23N3_Vk&amp;noverify=0"><i class="iconfont icon-qq"></i></a></div><div class="wordcount"></div><span>いちか已经写了 165.8k 字，</span><span>好像写完一本 曹禺 的 《日出》 了啊</span></div><div id="footer-right"><div class="footer-totop"><i class="fas fa-chevron-up" onclick="scrollToTop()"></i></div><div class="footer-info"><p>使用Hexo框架 | 基于butterfly修改</p><a title="苏公网安备 32050802011619号" target="_blank" rel="noopener" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32050802011619"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Page/备案图标.png" alt="备案图标" style="height: 16px;margin-right: 3px;filter: grayscale(1);"/>苏公网安备 32050802011619号</a><a title="苏ICP备2022040728号" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">苏ICP备2022040728号</a><a title="萌ICP备20223993号" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20223993">萌ICP备20223993号</a></div><div class="footer-service"><a title="腾讯云" target="_blank" rel="noopener" href="https://cloud.tencent.com"><img alt="腾讯云" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552681.png!towebp"/></a><a title="51LA" target="_blank" rel="noopener" href="https://www.51.la"><img alt="51LA" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552427.png!towebp"/></a><a title="CC BY-NC-SA 4.0" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="CC BY-NC-SA 4.0" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.ichika.cc/typora/202211071552856.png!towebp"/></a></div></div></div></footer></div><div id="decoration-left"> </div><div id="decoration-right"></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.ichika.cc/cdn/fancybox.umd.min.js"></script><script src="https://cdn.ichika.cc/cdn/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ichika.cc',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ichika.cc',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ichika.cc',
+        region: '',
+        pageSize: 4,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 4/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('.show-comments')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += `<div class='aside-list-item'><div class='comment-head'>`
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>
+          <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div></div>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    //let $dom = document.querySelector('#card-newest-comments .aside-list')
+    let $dom = document.querySelector('.comments-content')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('.show-comments')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><canvas class="fireworks" mobile="false" style="width:1266px; height:993px;"></canvas><script src="/js/fireworks.js"></script><script src="/js/sakura.js"></script><script src="/js/chinese-lunar.js"></script><script src="/js/console.js" data-pjax=""></script><script src="/js/custom.js" data-pjax=""></script><link rel="stylesheet" href="https://cdn.ichika.cc/cdn/APlayer_for_ichika.min.css" media="print" onload="this.media='all'"><script src="https://cdn.ichika.cc/cdn/APlayer_for_ichika.min.js"></script><script src="https://cdn.ichika.cc/cdn/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#web_bg",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})
+if(hasSetBg){
+  try {
+        pjaxSelectors.forEach(function (item, index, arr) {
+            if (item === "#web_bg") {
+                arr.splice(index, 1);
+            }
+        });
+    }catch(error){}
+}</script><script async data-pjax src="https://lib.baomitu.com/busuanzi/2.3.0/bsz.pure.mini.js"></script><!--//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js--></div></body></html>
