@@ -1,0 +1,23 @@
+:root {
+	--ichika-color:rgb(214, 16, 16);
+    --ichika-card-bg: rgba(255,235,235,0.88);
+    --ichika-post-info: rgb(255,235,235);
+    --ichika-footer-bg: rgb(255,200,200);
+    --console-bg: rgba(255,235,235,0.8);
+	--console-normal:rgba(255,235,235,0.55);
+	--console-hover:rgba(255,235,235,0.9);
+}
+
+[data-theme='dark'] {
+    --ichika-color:rgb(173, 21, 21);
+}
+
+#decoration-left{
+    background-image: url('left.png');
+    display: block;
+}
+
+#decoration-right{
+    background-image: url('right.png');
+    display: block;
+}

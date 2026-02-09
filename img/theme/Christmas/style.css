@@ -1,0 +1,7 @@
+:root {
+	--ichika-color:rgb(214, 16, 16);
+}
+
+[data-theme='dark'] {
+    --ichika-color:rgb(173, 21, 21);
+}
